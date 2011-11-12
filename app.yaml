@@ -1,56 +1,30 @@
-application: gitcookin
+application: gitcooking
 version: 1
 runtime: python
 api_version: 1
 
+
 builtins:
-# for an explaination of builtins, see:
-# http://code.google.com/appengine/docs/python/config/appconfig.html#Builtin_Handlers
-- datastore_admin: on
 - remote_api: on
-- admin_redirect: on
+- datastore_admin: on
 
-inbound_services:
-- warmup
+- url: /images
+  static_dir: static/images
 
-handlers:
-# enable the task queue (used internally by djangoappengine)
-- url: /_ah/queue/deferred
-  script: djangoappengine/deferred/handler.py
-  login: admin
+- url: /js
+  static_dir: static/js
 
-# TODO(gleitz): add this if log pisses you off
-# - url: /_ah/warmup
-#   script: point to below
-# class WarmupHandler(RequestHandler):
-#    def get(self):
-#       pass # or log it by: logging.info('Warmup Request')
+- url: /css
+  static_dir: static/css
 
-# django admin media page
-- url: /media/admin
-  static_dir: django/contrib/admin/media
-  expiration: '0'
-
-# allow use of the remote console
-- url: /remote_api
-  script: $PYTHON_LIB/google/appengine/ext/remote_api/handler.py
-  login: admin
-
-- url: /media/(.*\.manifest)
-  static_files: _generated_media/\1
-  mime_type: text/cache-manifest
-  upload: _generated_media/(.*\.manifest)
-  expiration: '0'
-
-- url: /media
-  static_dir: _generated_media/
-  expiration: '365d'
-
-# don't complain about missing favicon
 - url: /favicon.ico
-  static_files: media/img/favicon.ico
-  upload: media/img/favicon.ico
+  static_files: static/images/favicon.ico
+  upload: static/images/favicon.ico
 
-# start the app
+- url: /(.*\.(html))
+  static_files: static/html/\1
+  upload: static/html/(.*\.(html))
+
 - url: /.*
-  script: djangoappengine/main/main.py
+  script: main.py
+
