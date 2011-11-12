@@ -6,6 +6,11 @@
 </p>
 
 <p>
+	<b>Description</b>
+	<%= @recipe.description %>
+</p>
+
+<p>
   <b>Timetocook:</b>
   <%= @recipe.timetocook %>
 </p>
@@ -25,6 +30,22 @@
   <%= @recipe.votes_down %>
 </p>
 
+<table>
+  <tr>
+    <th>Steps</th>
+    <th>Ingredients</th>
+ </tr>
+ <tr>
+	<% @recipe.steps.each do |step| %>
+  	<td><%= step.description %></td>
+	<td><ul>
+		<% step.ingredients.each do |ingredient| %>
+  		<li><%= ingredient.name %></li>
+		<% end %>
+	</ul></td>
+	<% end %>
+</tr>
 
+	
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>

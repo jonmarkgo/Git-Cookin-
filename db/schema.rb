@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,47 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111112184531) do
-
-  create_table "ingredients", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "recipes", :force => true do |t|
-    t.string   "name"
-    t.integer  "timetocook"
-    t.integer  "servings"
-    t.integer  "votes_up"
-    t.integer  "votes_down"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "steps", :force => true do |t|
-    t.string   "description"
-    t.integer  "recipe_id"
-    t.integer  "seq"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-end
-=======
-# This file is auto-generated from the current state of the database. Instead
-# of editing this file, please use the migrations feature of Active Record to
-# incrementally modify your database, and then regenerate this schema definition.
-#
-# Note that this schema.rb definition is the authoritative source for your
-# database schema. If you need to create the application database on another
-# system, you should be using db:schema:load, not running all the migrations
-# from scratch. The latter is a flawed and unsustainable approach (the more migrations
-# you'll amass, the slower it'll run and the greater likelihood for issues).
-#
-# It's strongly recommended to check this file into your version control system.
-
-ActiveRecord::Schema.define(:version => 20111112193329) do
+ActiveRecord::Schema.define(:version => 20111112221115) do
 
   create_table "forks", :force => true do |t|
     t.integer  "parent_id"
@@ -62,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20111112193329) do
 
   create_table "ingredients", :force => true do |t|
     t.string   "name"
+    t.integer  "step_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -74,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20111112193329) do
     t.integer  "votes_down"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "description"
   end
 
   create_table "steps", :force => true do |t|
@@ -85,4 +46,3 @@ ActiveRecord::Schema.define(:version => 20111112193329) do
   end
 
 end
->>>>>>> 1c2400aa0441d5d5d5206443ea8628f4037feaf5
