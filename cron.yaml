@@ -1,0 +1,4 @@
+cron:
+#- description: crawl keep alive
+#  url: /ws/update-category/
+#  schedule: every 3 minutes

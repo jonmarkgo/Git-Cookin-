@@ -1,0 +1,24 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	sharedrepository = 1
+	pager = ""
+	editor = "emacs -nw"
+
+[receive]
+	denyNonFastforwards = true
+
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    lg = log -p
+    who = shortlog -s --
+
+[color]
+    ui = true

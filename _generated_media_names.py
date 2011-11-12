@@ -1,0 +1,1 @@
+NAMES = {'desktop.css': u'desktop-59e5a45ce32b447c16ab2863a0189da404feecb5.css', u'css/screen.css': u'css/screen-91e433641a48f120953352770f6f7d03e9a574e2.css', 'webapp.manifest': u'webapp.manifest', u'js/app.js': u'js/app-8fde79c65cb475a7e0ba720720341f73aa91dc43.js', 'main.js': u'main-da39a3ee5e6b4b0d3255bfef95601890afd80709.js'}
