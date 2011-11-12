@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  timetocook: 1
+  servings: 1
+  votes_up: 1
+  votes_down: 1
+
+two:
+  name: MyString
+  timetocook: 1
+  servings: 1
+  votes_up: 1
+  votes_down: 1

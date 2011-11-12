@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  description: MyString
+  recipe_id: 1
+  seq: 1
+
+two:
+  description: MyString
+  recipe_id: 1
+  seq: 1
