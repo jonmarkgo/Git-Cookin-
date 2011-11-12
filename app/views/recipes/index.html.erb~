@@ -40,6 +40,7 @@
             xfbml      : true
           });
         };
+        
         (function(d){
            var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
            js = d.createElement('script'); js.id = id; js.async = true;
@@ -47,4 +48,5 @@
            d.getElementsByTagName('head')[0].appendChild(js);
          }(document));
       </script>
-<div class="fb-login-button" data-redirect-uri="http://gitcookin.heroku.com/">Login with Facebook</div>
+      <div class="fb-login-button"
+      data-redirect-uri="http://gitcookin.heroku.com/">Login with Facebook</div>
