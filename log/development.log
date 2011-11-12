@@ -241,3 +241,173 @@ Started GET "/recipes/" for 127.0.0.1 at 2011-11-12 15:29:32 -0500
   [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
 Rendered recipes/index.html.erb within layouts/application (3.0ms)
 Completed 200 OK in 24ms (Views: 15.0ms | ActiveRecord: 1.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at C:/RailsInstaller/Ruby1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-12 16:26:23 -0500
+  Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (0.0ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+Rendered ingredients/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 378ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-11-12 16:26:35 -0500
+  Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.0ms)[0m  SELECT "recipes".* FROM "recipes"
+Rendered recipes/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 177ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-11-12 16:36:34 -0500
+  Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+Rendered recipes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 38ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-11-12 16:41:31 -0500
+  Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.0ms)[0m  SELECT "recipes".* FROM "recipes"
+Rendered recipes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 28ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-11-12 16:41:33 -0500
+  Processing by RecipesController#new as HTML
+Rendered recipes/_form.html.erb (66.0ms)
+Rendered recipes/new.html.erb within layouts/application (82.0ms)
+Completed 200 OK in 109ms (Views: 94.0ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at C:/RailsInstaller/Ruby1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-12 16:59:12 -0500
+  Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (0.0ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+Rendered ingredients/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 332ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-11-12 16:59:23 -0500
+  Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.0ms)[0m  SELECT "recipes".* FROM "recipes"
+Rendered recipes/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 174ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-11-12 16:59:55 -0500
+  Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+Rendered recipes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 42ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-11-12 17:01:40 -0500
+  Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.0ms)[0m  SELECT "recipes".* FROM "recipes"
+Rendered recipes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 28ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-12 17:02:20 -0500
+  Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (0.0ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+Rendered ingredients/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 35ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-12 17:04:05 -0500
+  Processing by IngredientsController#index as HTML
+  [1m[35mIngredient Load (0.0ms)[0m  SELECT "ingredients".* FROM "ingredients"
+Rendered ingredients/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 30ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-12 17:05:00 -0500
+  Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (1.0ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+Rendered ingredients/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 72ms (Views: 34.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-12 17:05:43 -0500
+  Processing by IngredientsController#index as HTML
+  [1m[35mIngredient Load (0.0ms)[0m  SELECT "ingredients".* FROM "ingredients"
+Rendered ingredients/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 26ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-12 17:06:45 -0500
+  Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (0.0ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+Rendered ingredients/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 35ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-11-12 17:11:56 -0500
+  Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes"
+Rendered recipes/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 68ms (Views: 19.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-12 17:16:15 -0500
+  Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (0.0ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+Rendered ingredients/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 95ms (Views: 55.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-11-12 17:16:26 -0500
+  Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes"
+Rendered recipes/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 93ms (Views: 51.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-11-12 17:17:13 -0500
+  Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+Rendered recipes/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 105ms (Views: 57.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-11-12 17:18:47 -0500
+  Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.0ms)[0m  SELECT "recipes".* FROM "recipes"
+Rendered recipes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 29ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-11-12 17:19:14 -0500
+  Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+Rendered recipes/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 108ms (Views: 57.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-11-12 17:20:02 -0500
+  Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.0ms)[0m  SELECT "recipes".* FROM "recipes"
+Rendered recipes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 28ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-11-12 17:20:42 -0500
+  Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+Rendered recipes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 61ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-11-12 17:21:32 -0500
+  Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes"
+Rendered recipes/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 29ms (Views: 15.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-11-12 17:22:03 -0500
+  Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+Rendered recipes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 28ms (Views: 15.0ms | ActiveRecord: 1.0ms)
