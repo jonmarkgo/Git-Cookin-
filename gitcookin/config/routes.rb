@@ -1,5 +1,10 @@
 Gitcookin::Application.routes.draw do
-  resources :recipes
+  resources :recipes do
+    member do
+      get 'fork'
+    end
+  end
+  
 
   resources :steps
 

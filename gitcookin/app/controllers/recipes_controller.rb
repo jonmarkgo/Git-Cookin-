@@ -69,6 +69,22 @@ class RecipesController < ApplicationController
     end
   end
 
+
+  # GET /recipes/1/fork
+  def fork
+    
+    old = Recipe.find(params[:id])
+    f = Fork.new(:parent_id => old.id)
+    @recipe = old.dup
+    @recipe.id = nil
+    @recipe.save!
+    f.child = @recipe
+    f.save!
+    
+    redirect_to(@recipe, :notice => 'Recipe was successfully forked.')
+  end
+
+
   # DELETE /recipes/1
   # DELETE /recipes/1.xml
   def destroy
