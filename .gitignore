@@ -2,3 +2,4 @@
 .DS_Store
 .gaedata/
 *#*
+db/migrate/20111112221115_add_description_to_recipes.rb
