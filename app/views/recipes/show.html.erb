@@ -1,18 +1,16 @@
-      <div class="row">
+      <div class="row" style="padding-bottom:15px;">
         <div class="span8">
-          <h1>Chicken Marsala</h1>
+          <h2><%= @recipe.name %></h2>
+          <small>Forked from <a href="#">Chris</a> Added 50 gallons of cyanide</small>
         </div>
 
         <div class="span4">
           <ul class="media-grid">
-            <li><a href="#print"><img class="thumbnail" src="/images/185-printer.png"
-            alt=""></a></li>
+            <li><a href="#print"><img class="thumbnail" src="/images/185-printer.png" alt=""></a></li>
 
-            <li><a href="#favorite"><img class="thumbnail" src="/images/29-heart.png"
-            alt=""></a></li>
+            <li><a href="#favorite"><img class="thumbnail" src="/images/29-heart.png" alt=""></a></li>
 
-            <li><a href="#watch"><img class="thumbnail" src="/images/163-glasses-1.png"
-            alt=""></a></li>
+            <li><a href="#watch"><img class="thumbnail" src="/images/163-glasses-1.png" alt=""></a></li>
           </ul>
         </div>
 
@@ -24,22 +22,22 @@
               Follow
             </div>
 
-            <div class="span2"><img class="thumbnail" src="http://placehold.it/50x50"
-            alt=""></div>
+            <div class="span2"><img class="thumbnail" src="http://placehold.it/50x50" alt=""></div>
           </div>
         </div>
       </div>
 
       <div class="row">
-        <div class="span6"><img class="thumbnail" src="http://placehold.it/330x230" alt=
-        ""></div>
+        <div class="span6"><img class="thumbnail" src="http://placehold.it/330x230" alt=""></div>
 
         <div class="span6">
-          Description: Blah blah blah
+          <h3>Description</h3>
+          <p><%= @recipe.description %></p>
+          <div class="upfork"><img src="/images/upfork.png"> <%= @recipe.votes_up %></div>
+          <div class="downfork"><img src="/images/downfork.png"> <%= @recipe.votes_down %></div>
         </div>
 
-        <div class="span4"><img class="thumbnail" src="http://placehold.it/230x230" alt=
-        ""></div>
+        <div class="span4"><img class="thumbnail" src="http://placehold.it/230x230" alt=""></div>
       </div>
 
       <div class="row">
@@ -50,48 +48,20 @@
 
               <th>Steps</th>
             </tr>
-
+<% @recipes.steps.each do |step| %>
             <tr>
               <td>
                 <ul class="unstyled">
-                  <li>1 cup chopped walnuts</li>
+                <% @step.step_ingredients.each do |step_ingredient| %>
+                  <li><%= step_ingredient.quanity %> <%= step_ingredient.measurement %> <%= step_ingredient.ingredient.name %></li>
+                  <% end %>
                 </ul>
               </td>
 
-              <td>1.Preheat oven and shit</td>
+              <td><%= step.sortnum %>. <%= step.instruction %></td>
             </tr>
-
-            <tr>
-              <td>
-                <ul class="unstyled">
-                  <li>1 pacage cake</li>
-
-                  <li>1/2 cup rum</li>
-
-                  <li>1337 eggs</li>
-                </ul>
-              </td>
-
-              <td>2.Mix that shit</td>
-            </tr>
-
-            <tr>
-              <td></td>
-
-              <td>3. BAKE!</td>
-            </tr>
-
-            <tr>
-              <td>
-                <ul class="unstyled">
-                  <li>1/2 cup butter</li>
-
-                  <li>crack</li>
-                </ul>
-              </td>
-
-              <td>4. om nom nom</td>
-            </tr>
+<% end %>
+            
           </table>
         </div>
 
@@ -104,11 +74,33 @@
 
           <div class="tab-content">
             <div class="active" id="best_forks">
-              BEST FORKS
+              <div class="row">
+                <div class="span1"><img class="thumbnail" src="http://placehold.it/50x50" alt=""></div>
+                <div class="span3"><ul class="unstyled"><li>+2 cups flour</li><li>-3 cups poop</li></ul></div>
+              </div>
+              <div class="row">
+                <div class="span1"><img class="thumbnail" src="http://placehold.it/50x50" alt=""></div>
+                <div class="span3"><ul class="unstyled"><li>+2 cups flour</li><li>-3 cups poop</li></ul></div>
+              </div>
+              <div class="row">
+                <div class="span1"><img class="thumbnail" src="http://placehold.it/50x50" alt=""></div>
+                <div class="span3"><ul class="unstyled"><li>+2 cups flour</li><li>-3 cups poop</li></ul></div>
+              </div>
             </div>
 
             <div id="new_forks">
-              NEW FORKS
+                            <div class="row">
+                <div class="span1"><img class="thumbnail" src="http://placehold.it/50x50" alt=""></div>
+                <div class="span3"><ul class="unstyled"><li>+2 cups fsdfdsfr</li><li>-3 cups dsfdp</li></ul></div>
+              </div>
+              <div class="row">
+                <div class="span1"><img class="thumbnail" src="http://placehold.it/50x50" alt=""></div>
+                <div class="span3"><ul class="unstyled"><li>+2 cups sdfdsur</li><li>-3 cups psfdsfp</li></ul></div>
+              </div>
+              <div class="row">
+                <div class="span1"><img class="thumbnail" src="http://placehold.it/50x50" alt=""></div>
+                <div class="span3"><ul class="unstyled"><li>+2 cups fsfdsf</li><li>-3 cups fdsfop</li></ul></div>
+              </div>
             </div>
           </div>
         </div>
