@@ -1,138 +1,116 @@
-<<<<<<< HEAD
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @recipe.name %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @recipe.user_id %>
-</p>
-
-<p>
-  <b>Parent:</b>
-  <%= @recipe.parent_id %>
-</p>
-
-<p>
-  <b>Votes up:</b>
-  <%= @recipe.votes_up %>
-</p>
-
-<p>
-  <b>Votes down:</b>
-  <%= @recipe.votes_down %>
-</p>
-
-<p>
-  <b>Servings:</b>
-  <%= @recipe.servings %>
-</p>
-
-
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
-=======
-  <div class="row">
-    <div class="span8">
-      <h1>Chicken Marsala</h1>
-    </div>
-
-    <div class="span4">
-      <ul class="media-grid">
-
-        <li><a href="#print"><img class="thumbnail" src="/images/185-printer.png" alt=""></a></li>
-
-        <li><a href="#favorite"><img class="thumbnail" src="/images/29-heart.png" alt=""></a></li>
-
-        <li><a href="#watch"><img class="thumbnail" src="/images/163-glasses-1.png" alt=""></a></li>
-      </ul>
-    </div>
-
-    <div class="span4">
       <div class="row">
-        <div class="span2" style="text-align:right;">
-          Spock94<br>
-          13 Recipes<br>
-          Follow
+        <div class="span8">
+          <h1>Chicken Marsala</h1>
         </div>
 
-        <div class="span2"><img class="thumbnail" src="http://placehold.it/50x50" alt=""></div>
+        <div class="span4">
+          <ul class="media-grid">
+            <li><a href="#print"><img class="thumbnail" src="/images/185-printer.png"
+            alt=""></a></li>
+
+            <li><a href="#favorite"><img class="thumbnail" src="/images/29-heart.png"
+            alt=""></a></li>
+
+            <li><a href="#watch"><img class="thumbnail" src="/images/163-glasses-1.png"
+            alt=""></a></li>
+          </ul>
+        </div>
+
+        <div class="span4">
+          <div class="row">
+            <div class="span2" style="text-align:right;">
+              Spock94<br>
+              13 Recipes<br>
+              Follow
+            </div>
+
+            <div class="span2"><img class="thumbnail" src="http://placehold.it/50x50"
+            alt=""></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span6"><img class="thumbnail" src="http://placehold.it/330x230" alt=
+        ""></div>
+
+        <div class="span6">
+          Description: Blah blah blah
+        </div>
+
+        <div class="span4"><img class="thumbnail" src="http://placehold.it/230x230" alt=
+        ""></div>
+      </div>
+
+      <div class="row">
+        <div class="span12">
+          <table>
+            <tr>
+              <th>Ingredients</th>
+
+              <th>Steps</th>
+            </tr>
+
+            <tr>
+              <td>
+                <ul class="unstyled">
+                  <li>1 cup chopped walnuts</li>
+                </ul>
+              </td>
+
+              <td>1.Preheat oven and shit</td>
+            </tr>
+
+            <tr>
+              <td>
+                <ul class="unstyled">
+                  <li>1 pacage cake</li>
+
+                  <li>1/2 cup rum</li>
+
+                  <li>1337 eggs</li>
+                </ul>
+              </td>
+
+              <td>2.Mix that shit</td>
+            </tr>
+
+            <tr>
+              <td></td>
+
+              <td>3. BAKE!</td>
+            </tr>
+
+            <tr>
+              <td>
+                <ul class="unstyled">
+                  <li>1/2 cup butter</li>
+
+                  <li>crack</li>
+                </ul>
+              </td>
+
+              <td>4. om nom nom</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="span4">
+          <ul class="tabs">
+            <li class="active"><a href="#best_forks">Best</a></li>
+
+            <li><a href="#new_forks">New</a></li>
+          </ul>
+
+          <div class="tab-content">
+            <div class="active" id="best_forks">
+              BEST FORKS
+            </div>
+
+            <div id="new_forks">
+              NEW FORKS
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="span6"><img class="thumbnail" src="http://placehold.it/330x230" alt=""></div>
-
-    <div class="span6">
-      Description: Blah blah blah
-    </div>
-
-    <div class="span4"><img class="thumbnail" src="http://placehold.it/230x230" alt=""></div>
-  </div>
-
-  <div class="row">
-    <div class="span12">
-      <table>
-        <tr>
-          <th>Ingredients</th>
-
-          <th>Steps</th>
-        </tr>
-
-        <tr>
-          <td>
-            <ul class="unstyled">
-              <li>1 cup chopped walnuts</li>
-            </ul>
-          </td>
-
-          <td>1.Preheat oven and shit</td>
-        </tr>
-
-        <tr>
-          <td>
-            <ul class="unstyled">
-              <li>1 pacage cake</li>
-
-              <li>1/2 cup rum</li>
-
-              <li>1337 eggs</li>
-            </ul>
-          </td>
-
-          <td>2.Mix that shit</td>
-        </tr>
-
-        <tr>
-          <td></td>
-
-          <td>3. BAKE!</td>
-        </tr>
-
-        <tr>
-          <td>
-            <ul class="unstyled">
-              <li>1/2 cup butter</li>
-
-              <li>crack</li>
-            </ul>
-          </td>
-
-          <td>4. om nom nom</td>
-        </tr>
-      </table>
-    </div>
-
-    <div class="span4">
-      <ul class="tabs">
-        <li class="active"><a href="#best_forks">Best</a></li>
-
-        <li><a href="#new_forks">New</a></li>
-      </ul>
-    </div>
-  </div>
->>>>>>> 47ddf27bf35b0347f367fcae7ff741098c7f7784
