@@ -1,4 +1,8 @@
 Gitcookin::Application.routes.draw do
+  get "home_page/index"
+
+  get "home_page/show"
+
   resources :recipes do
     member do
       get 'fork'
