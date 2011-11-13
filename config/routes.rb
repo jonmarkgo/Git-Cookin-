@@ -1,4 +1,8 @@
 Gitcookin::Application.routes.draw do
+<<<<<<< HEAD
+=======
+  resources :tags
+>>>>>>> 2d87fe0cf75149ae6e4fd653b5e9fcc85b091e4f
 
   resources :users
 
