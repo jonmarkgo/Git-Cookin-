@@ -70,7 +70,7 @@ if ($("#ingredients").is(":visible")) {
     <h1>Add Your Recipe</h1>
   </div>
   <div class="span16">
-      <form onsubmit="return false;">
+      <form method="POST" action="/recipes">
         <fieldset>
         <div id="recipemeta">
           <legend style="padding-bottom: 20px;">Tell Us About It</legend>
@@ -132,9 +132,10 @@ if ($("#ingredients").is(":visible")) {
              </div>
              </div>
              </div>
-        </fieldset>
-      </form>
+        
        <div class="actions">
-<button class="btn" id="metacont">Continue</button>&nbsp;<button class="btn" id="ingredcont" style="display: none;">Continue</button>&nbsp;<input id="subbut" type="submit" style="display: none;" class="btn primary" value="Post Recipe">
+<button onclick="return false;" class="btn" id="metacont">Continue</button>&nbsp;<button onclick="return false;" class="btn" id="ingredcont" style="display: none;">Continue</button>&nbsp;<input id="subbut" type="submit" style="display: none;" class="btn primary" value="Post Recipe">
           </div>
+          </fieldset>
+      </form>
     </div>
