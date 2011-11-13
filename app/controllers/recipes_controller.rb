@@ -116,21 +116,21 @@ end
 
 #recipes/1/diff
 def diff
-    childRecipe = Recipe.find(params[:id])
-    parentRecipe = childRecipe.parent
+    @childRecipe = Recipe.find(params[:id])
+    @parentRecipe = @childRecipe.parent
     
    #  parentHash = Hash[parentRecipe.steps.all.map {|x| [x.id, x]}]
     parentHash = {}
-    parentRecipe.steps.each do |step|
-      step.stepingredients.each do |si|
+    @parentRecipe.steps.each do |step|
+      step.step_ingredients.each do |si|
         parentHash[step.id.to_s+"_"+si.id.to_s] = si
       end
     end
     
     @diff = []
     
-    childRecipe.steps.each do |step|
-      step.stepingredients.each do |si|
+    @childRecipe.steps.each do |step|
+      step.step_ingredients.each do |si|
         orgStep = parentHash[String(step.parent_id)+"_"+String(si.parent_id)] 
         if orgStep == nil #Addition
           @diff << "Added #{si.quanity} #{si.measurement} of #{si.ingredient.name}"
@@ -154,7 +154,10 @@ def diff
     puts @diff
     puts "------------------"
     
-    redirect_to(childRecipe, :notice => 'Competed Diff.')
+    
+    respond_to do |format|
+      format.html {  render :action => "diff" }
+    end
 end
 
 end
