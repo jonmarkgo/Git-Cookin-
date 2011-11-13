@@ -41,7 +41,6 @@ class RecipesController < ApplicationController
   # POST /recipes
   # POST /recipes.xml
   def create
-    p = params
     @recipe = Recipe.new(:name => p[:recipename],
     :servings => p[:servings],
     :description => p[:description],
@@ -49,42 +48,8 @@ class RecipesController < ApplicationController
     :votes_up => 0
     )
     
-    steps = p[:step]
-    steps.each_with_index do |step,index|
-      if step == "" then next end
-      
-      puts "step #{step}"
-      
-      mStep = Step.new(:instruction => step, :sortnum => index)
-      
-      measurments = p["step"+String(index)+"measurement"]
-      names = p["step"+String(index)+"ingredientname"]
-      quantities = p["step"+String(index)+"quantity"]
-      
-      puts "measurments #{measurments}"
-      puts "names #{names}"
-      puts "quantity #{quantities}"
-      
-      if quantities == nil then next end
-      
-      quantities.each do |q|
-        puts q
-      end
-      
-      quantities.each_with_index do |mquantity,iindex|
-        measurment = measurments[iindex]
-        puts "measurment #{measurment}"
-        puts "quantity #{mquantity}"
-        
-        id = Ingredient.find_or_create_by_name(names[iindex]).id
-        ing = StepIngredient.new(:quanity => mquantity, :measurement => measurment, :ingredient_id => id)
-        mStep.step_ingredients << ing
-      end
-      mStep.save!
-      
-      @recipe.steps << mStep
-    end
-
+    addStepToRecipe(@recipe,params)
+    
     respond_to do |format|
       if @recipe.save
         format.html { redirect_to(@recipe, :notice => 'Recipe was successfully created.') }
@@ -95,11 +60,57 @@ class RecipesController < ApplicationController
       end
     end
   end
+  
+  
+  #recipe, params
+  def addToRecipe(recipe,p)
+    steps = p[:step]
+    steps.each_with_index do |step,index|
+      if step == "" then next end
+      
+      mStep = Step.new(:instruction => step, :sortnum => index)
+      
+      measurments = p["step"+String(index)+"measurement"]
+      names = p["step"+String(index)+"ingredientname"]
+      quantities = p["step"+String(index)+"quantity"]
+      
+      if quantities == nil then next end
+            
+      quantities.each_with_index do |mquantity,iindex|
+        measurment = measurments[iindex]
+        
+        id = Ingredient.find_or_create_by_name(names[iindex]).id
+        ing = StepIngredient.new(:quanity => mquantity, :measurement => measurment, :ingredient_id => id)
+        mStep.step_ingredients << ing
+      end
+      
+      recipe.steps << mStep
+    end
+  end
+  
 
   # PUT /recipes/1
   # PUT /recipes/1.xml
   def update
     @recipe = Recipe.find(params[:id])
+    
+    addToRecipe(@recipe, params)
+    
+    @recipe.steps.each do |step|
+      step.step_ingredients.each do |si|
+        prefix = "step"+String(step.id)
+        quantity = params[prefix+"quantity"+String(si.id)]
+        measurement = params[prefix+"measurement"+String(si.id)]
+        ingredientname = params[prefix+"ingredientname"+String(si.id)]
+        
+        si.quanity = quantity
+        si.measurement = measurement
+        si.ingredient_id = Ingredient.find_or_create_by_name(ingredientname).id
+        si.save!
+        
+      end
+    end
+    
 
     respond_to do |format|
       if @recipe.update_attributes(params[:recipe])
@@ -142,7 +153,7 @@ def fork
       newStep.recipe = @recipe
       newStep.save!
       
-      step.stepingredients.each do |si|
+      step.step_ingredients.each do |si|
         newSi = si.dup
         newSi.id = nil
         newSi.parent = si

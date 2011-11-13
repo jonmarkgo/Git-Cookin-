@@ -1,6 +1,6 @@
 module RecipesHelper
 	def mini_diff(childRecipe)
-    @parentRecipe = @childRecipe.parent
+    @parentRecipe = childRecipe.parent
     
     parentHash = {}
     @parentRecipe.steps.each do |step|
