@@ -40,7 +40,49 @@ class RecipesController < ApplicationController
   # POST /recipes
   # POST /recipes.xml
   def create
-    @recipe = Recipe.new(params[:recipe])
+    p = params
+    @recipe = Recipe.new(:name => p[:recipename],
+    :servings => p[:servings],
+    :description => p[:description],
+    :votes_down => 0,
+    :votes_up => 0
+    )
+    
+    steps = p[:step]
+    steps.each_with_index do |step,index|
+      if step == "" then next end
+      
+      puts "step #{step}"
+      
+      mStep = Step.new(:instruction => step, :sortnum => index)
+      
+      measurments = p["step"+String(index)+"measurement"]
+      names = p["step"+String(index)+"ingredientname"]
+      quantities = p["step"+String(index)+"quantity"]
+      
+      puts "measurments #{measurments}"
+      puts "names #{names}"
+      puts "quantity #{quantities}"
+      
+      if quantities == nil then next end
+      
+      quantities.each do |q|
+        puts q
+      end
+      
+      quantities.each_with_index do |mquantity,iindex|
+        measurment = measurments[iindex]
+        puts "measurment #{measurment}"
+        puts "quantity #{mquantity}"
+        
+        id = Ingredient.find_or_create_by_name(names[iindex]).id
+        ing = StepIngredient.new(:quanity => mquantity, :measurement => measurment, :ingredient_id => id)
+        mStep.step_ingredients << ing
+      end
+      mStep.save!
+      
+      @recipe.steps << mStep
+    end
 
     respond_to do |format|
       if @recipe.save
