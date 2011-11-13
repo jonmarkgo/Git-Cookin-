@@ -1,5 +1,123 @@
-<h1>New recipe</h1>
+<script type="text/javascript">
+$(function() {
+	$("#metacont").click(function() {
+if ($("#recipemeta").is(":visible")) {
+		$("#recipemeta").hide("drop",{},"fast",function() {
+			$("#ingredcont").show();
+		$("#ingredients").show("drop",{},"fast");	
+		$("#metacont").val("Back");
+	});
+	}
+	else {
+		$("#recipemeta").show("drop",{},"fast",function() {
+			$("#metacont").val("Continue");
+			$("#ingredcont").hide();
+		$("#ingredients").hide("drop",{},"fast");	
+	});
+	}
+		});	
 
-<%= render 'form' %>
 
-<%= link_to 'Back', recipes_path %>
+	$("#ingredcont").click(function() {
+if ($("#ingredients").is(":visible")) {
+		$("#ingredients").hide("drop",{},"fast",function() {
+			$("#metacont").hide();
+			$("#subbut").show();
+		$("#steppy").show("drop",{},"fast");	
+		$("#ingredcont").val("Back");
+	});
+	}
+	else {
+		$("#ingredients").show("drop",{},"fast",function() {
+			$("#ingredcont").val("Continue");
+			$("#metacont").show();
+			$("#subbut").hide();
+		$("#steppy").hide("drop",{},"fast");	
+	});
+	}
+		});	
+
+		$(".lastingred input:last").live(
+			'focus',function() {
+				$(".lastingred").after('<div class="clearfix lastingred">            <div class="input">              <div class="inline-inputs">                <input class="mini" type="text" placeholder="1">                <input class="small" type="text" placeholder="cup">                <input type="text" placeholder="whole what flour"> </div></div> </div>');
+          $(this).parent().parent().parent().removeClass("lastingred");
+		});
+		$(".laststep input:last").live(
+			'focus',function() {
+				$(".laststep").after('<div class="clearfix laststep"><div class="input"><input class="xlarge" type="text" placeholder="Combine milk and flour."> </div> </div>');
+				$(this).parent().parent().removeClass("laststep");
+		});
+
+		          
+	});
+</script>
+<div class="page-header">
+    <h1>Add Your Recipe</h1>
+  </div>
+  <div class="span16">
+      <form onsubmit="return false;">
+        <fieldset>
+        <div id="recipemeta">
+          <legend style="padding-bottom: 20px;">Tell Us About It</legend>
+          <div class="clearfix">
+            
+            <div class="input">
+              <input class="xlarge"  name="recipename" size="30" type="text" placeholder="Recipe Name">
+            </div>
+          </div><!-- /clearfix -->
+          <div class="clearfix">
+            
+            <div class="input">
+              <input class="xlarge" name="servings" size="30" type="number" placeholder="# of Servings">
+            </div>
+          </div><!-- /clearfix -->
+                    <div class="clearfix">
+            <div class="input">
+              <textarea class="xlarge" id="description" name="description" rows="3" placeholder="Description"></textarea>
+              <span class="help-block">
+                Describe your recipe in a sentence or two.
+              </span>
+            </div>
+          </div><!-- /clearfix -->
+          </div>
+                 <div id="ingredients" style="display: none;">
+          <legend style="padding-bottom: 20px;">What Ingredients Do You Need?</legend>
+          <div class="clearfix lastingred">
+            <div class="input">
+              <div class="inline-inputs">
+                <input class="mini" type="text" placeholder="1">
+                <input class="small" type="text" placeholder="cup"> 
+                <input type="text" placeholder="whole what flour">
+              </div>
+            </div>
+          </div><!-- /clearfix -->
+           
+          </div>
+
+             <div id="steppy" style="display: none;">
+             <div class="row">
+             <div class="span2"><h3>Ingredients</h3>
+             <ul class="unstyled"><li><span class="label">apples</span></li><li><span class="label">feces</span></li></ul></div>
+             <div class="span14">
+          <legend style="padding-bottom: 20px;">What Are The Steps?</legend>
+          <table>
+          <tr><th>Steps</th><th>Assigned Ingredients</th></tr>
+          <tr class="laststep">
+          <td>
+              
+                <input class="xlarge" type="text" placeholder="Combine milk and flour.">
+               
+            </td>
+            <td>
+             <ul class="unstyled"><li><span class="label success">oranges</span></li></ul></td>
+             </tr>
+             </table>
+             </div>
+             </div>
+             </div>
+        </fieldset>
+      </form>
+       <div class="actions">
+            <input id="metacont" type="submit" class="btn primary" value="Continue">&nbsp;<input id="ingredcont" type="submit" style="display: none;" class="btn primary" value="Continue">&nbsp;<input id="subbut" type="submit" style="display: none;" class="btn primary" value="Post Recipe">
+          </div>
+    </div>
