@@ -102,7 +102,7 @@ var stepindex = $(this).parent().parent().find('td:first input').attr('name');
     <h1>Edit Your Recipe</h1>
   </div>
   <div class="span16">
-      <form method="PUT" action="/recipes/<%= @recipe.id %>">
+      <form method="POST" action="/recipes/<%= @recipe.id %>">
         <fieldset>
         <div id="recipemeta">
           <legend style="padding-bottom: 20px;">Tell Us About It</legend>
