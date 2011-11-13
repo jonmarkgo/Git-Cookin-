@@ -2381,3 +2381,43 @@ Started GET "/recipes/1" for 127.0.0.1 at 2011-11-12 20:02:21 -0500
   [1m[36mRecipe Load (0.5ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 1 LIMIT 1[0m
 Rendered recipes/show.html.erb within layouts/application (0.7ms)
 Completed 200 OK in 19ms (Views: 3.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2011-11-12 20:05:43 -0500
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.5ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 1 LIMIT 1
+Rendered recipes/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 46ms (Views: 3.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2011-11-12 20:05:52 -0500
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 1 LIMIT 1[0m
+Rendered recipes/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 19ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2011-11-12 20:05:58 -0500
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 1 LIMIT 1
+Rendered recipes/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 20ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2011-11-12 20:06:35 -0500
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 1 LIMIT 1[0m
+Rendered recipes/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 55ms (Views: 3.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2011-11-12 20:07:58 -0500
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.5ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 1 LIMIT 1
+Rendered recipes/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 20ms (Views: 3.4ms | ActiveRecord: 0.5ms)
