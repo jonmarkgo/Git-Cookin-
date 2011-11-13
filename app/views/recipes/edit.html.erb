@@ -34,7 +34,7 @@ if ($("#ingredients").is(":visible")) {
 });
 		
 		$("#stepingredients").html(ingredhtml);
-		$( ".ingredient" ).draggable({ helper: "clone" });
+		$( ".ingredient" ).draggable({revert: "invalid"});
 	});
 	}
 	else {
@@ -56,10 +56,11 @@ if ($("#ingredients").is(":visible")) {
 			'focus',function() {
 				$(".laststep").after('<tr class="laststep"><td><div class="clearfix stepinput"><div class="input"><input class="xlarge" type="text" name="step[]" placeholder="Combine milk and flour."></div></div></td><td><ul class="unstyled"></ul></td></tr>');
 				$(this).parent().parent().parent().parent().removeClass("laststep");
-				$( ".stepinput" ).droppable({
+			$( ".stepinput" ).droppable({
 			hoverClass: "success",
 			drop: function( event, ui ) {
 				var stepindex = $(this).parent().parent().index() - 1;
+				$(ui.draggable).fadeOut().remove();
 				$(this).parent().parent().find('td:last > ul').append('<li><span class="label success">' + $(ui.draggable).text() + '</span>' + $(ui.draggable).find('.indetails').html() + '</li>').fadeIn();
 
 				$(this).parent().parent().find('li:last > .hidquant').attr('name','step' + stepindex + 'quantity[]');
@@ -74,8 +75,9 @@ if ($("#ingredients").is(":visible")) {
 			hoverClass: "success",
 			drop: function( event, ui ) {
 				var stepindex = $(this).parent().parent().index() - 1;
+				$(ui.draggable).fadeOut().remove();
 				$(this).parent().parent().find('td:last > ul').append('<li><span class="label success">' + $(ui.draggable).text() + '</span>' + $(ui.draggable).find('.indetails').html() + '</li>').fadeIn();
-				
+
 				$(this).parent().parent().find('li:last > .hidquant').attr('name','step' + stepindex + 'quantity[]');
 				$(this).parent().parent().find('li:last > .hidmeas').attr('name','step' + stepindex + 'measurement[]');
 				$(this).parent().parent().find('li:last > .hidname').attr('name','step' + stepindex + 'ingredientname[]');
