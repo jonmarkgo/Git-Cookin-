@@ -163,7 +163,7 @@ def fork
       
     end
     
-    redirect_to(@recipe, :notice => 'Recipe was successfully forked.')
+    render :action => "edit"
   end
 end
 
