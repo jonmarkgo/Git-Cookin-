@@ -149,7 +149,26 @@ if ($("#ingredients").is(":visible")) {
           <legend style="padding-bottom: 20px;">What Are The Steps?</legend>
           <table>
           <tr><th>Steps</th><th>Assigned Ingredients</th></tr>
-          <tr class="laststep">
+          <% @recipe.steps.each do |step| %>
+          <tr>
+          <td>
+              <div class="clearfix stepinput">
+              <div class="input">
+                <input class="xlarge" type="text" name="step[]" value="<%= step.instruction %>">
+                </div>
+               </div>
+            </td>
+            <td>
+             <ul class="unstyled">
+<% step.step_ingredients.each do |singredient| %>
+<li><span class="label success"><%= singredient.quanity %> <%= singredient.measurement %> <%= singredient.ingredient.name %></span>
+<input type="hidden" name="step<%= step.id %>quantity<%= singredient.id %>" class="hidquant" value="<%= singredient.quanity %>"><input type="hidden" class="hidmeas" name="step<%= step.id %>measurement<%= singredient.id %>" value="<%= singredient.measurement %>"><input type="hidden" class="hidname" name="step<%= step.id %>ingredientname<%= singredient.id %>" value="<%= singredient.ingredient.name %>">
+</li>
+<% end %>
+             </ul></td>
+             </tr>
+             <% end %>
+                     <tr class="laststep">
           <td>
               <div class="clearfix stepinput">
               <div class="input">
