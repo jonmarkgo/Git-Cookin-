@@ -103,10 +103,14 @@ class RecipesController < ApplicationController
         measurement = params[prefix+"measurement"+String(si.id)]
         ingredientname = params[prefix+"ingredientname"+String(si.id)]
         
+        puts "modified: #{si.inspect}"
+        
         si.quanity = quantity
         si.measurement = measurement
         si.ingredient_id = Ingredient.find_or_create_by_name(ingredientname).id
         si.save!
+        
+        puts "to: #{si.inspect}"
         
       end
     end
