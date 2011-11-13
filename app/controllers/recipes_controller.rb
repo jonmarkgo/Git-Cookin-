@@ -119,7 +119,6 @@ def diff
     @childRecipe = Recipe.find(params[:id])
     @parentRecipe = @childRecipe.parent
     
-   #  parentHash = Hash[parentRecipe.steps.all.map {|x| [x.id, x]}]
     parentHash = {}
     @parentRecipe.steps.each do |step|
       step.step_ingredients.each do |si|
@@ -149,11 +148,6 @@ def diff
     parentHash.each do |key, value| 
        @diff << "Deleted #{value.ingredient.name}"
     end
-    
-    puts "-----Diff---------"
-    puts @diff
-    puts "------------------"
-    
     
     respond_to do |format|
       format.html {  render :action => "diff" }
