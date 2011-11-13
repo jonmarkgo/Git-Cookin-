@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(:version => 20111112230957) do
     t.integer  "votes_down"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "preperationtime"
     t.string   "description"
+    t.integer  "preperationtime"
   end
 
   create_table "steps", :force => true do |t|
