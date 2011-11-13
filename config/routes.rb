@@ -1,4 +1,14 @@
 Gitcookin::Application.routes.draw do
+  resources :users
+
+  resources :recipes
+
+  resources :ingredients
+
+  resources :steps
+
+  resources :step_ingredients
+
   get "home_page/index"
 
   get "home_page/show"

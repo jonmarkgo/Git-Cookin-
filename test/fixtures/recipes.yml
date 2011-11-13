@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  user_id: 1
+  parent_id: 1
+  votes_up: 1
+  votes_down: 1
+  servings: 1
+
+two:
+  name: MyString
+  user_id: 1
+  parent_id: 1
+  votes_up: 1
+  votes_down: 1
+  servings: 1

@@ -1,0 +1,31 @@
+<h1>Listing step_ingredients</h1>
+
+<table>
+  <tr>
+    <th>Parent</th>
+    <th>Quanity</th>
+    <th>Measurement</th>
+    <th>Ingredient</th>
+    <th>Step</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @step_ingredients.each do |step_ingredient| %>
+  <tr>
+    <td><%= step_ingredient.parent_id %></td>
+    <td><%= step_ingredient.quanity %></td>
+    <td><%= step_ingredient.measurement %></td>
+    <td><%= step_ingredient.ingredient_id %></td>
+    <td><%= step_ingredient.step_id %></td>
+    <td><%= link_to 'Show', step_ingredient %></td>
+    <td><%= link_to 'Edit', edit_step_ingredient_path(step_ingredient) %></td>
+    <td><%= link_to 'Destroy', step_ingredient, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Step ingredient', new_step_ingredient_path %>

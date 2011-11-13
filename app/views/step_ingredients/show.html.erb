@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Parent:</b>
+  <%= @step_ingredient.parent_id %>
+</p>
+
+<p>
+  <b>Quanity:</b>
+  <%= @step_ingredient.quanity %>
+</p>
+
+<p>
+  <b>Measurement:</b>
+  <%= @step_ingredient.measurement %>
+</p>
+
+<p>
+  <b>Ingredient:</b>
+  <%= @step_ingredient.ingredient_id %>
+</p>
+
+<p>
+  <b>Step:</b>
+  <%= @step_ingredient.step_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_step_ingredient_path(@step_ingredient) %> |
+<%= link_to 'Back', step_ingredients_path %>

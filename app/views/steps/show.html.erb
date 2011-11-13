@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Parent:</b>
+  <%= @step.parent_id %>
+</p>
+
+<p>
+  <b>Recipe:</b>
+  <%= @step.recipe_id %>
+</p>
+
+<p>
+  <b>Instruction:</b>
+  <%= @step.instruction %>
+</p>
+
+<p>
+  <b>Sortnum:</b>
+  <%= @step.sortnum %>
+</p>
+
+
+<%= link_to 'Edit', edit_step_path(@step) %> |
+<%= link_to 'Back', steps_path %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  parent_id: 1
+  quanity: 1.5
+  measurement: MyString
+  ingredient_id: 1
+  step_id: 1
+
+two:
+  parent_id: 1
+  quanity: 1.5
+  measurement: MyString
+  ingredient_id: 1
+  step_id: 1
