@@ -1,4 +1,8 @@
 Gitcookin::Application.routes.draw do
+  get "search/index"
+
+  get "search/show"
+
   get "home_page/index"
 
   get "home_page/show"
