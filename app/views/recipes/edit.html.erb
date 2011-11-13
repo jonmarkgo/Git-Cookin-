@@ -60,37 +60,45 @@ if ($("#ingredients").is(":visible")) {
 			hoverClass: "success",
 			drop: function( event, ui ) {
 				var stepindex = $(this).parent().parent().index() - 1;
-				$(ui.draggable).fadeOut().remove();
-				$(this).parent().parent().find('td:last > ul').append('<li><span class="label success">' + $(ui.draggable).text() + '</span>' + $(ui.draggable).find('.indetails').html() + '</li>').fadeIn();
+
+				$(ui.draggable).appendTo($(this).parent().parent().find('td:last > ul')).hide().fadeIn();
+				$(this).parent().parent().find('td:last > ul > li:last span').addClass('success');
+				$(this).parent().parent().find('td:last > ul > li:last').attr('style','');
+				//$(ui.draggable).addClass('success');
+			//	$(this).parent().parent().find('td:last > ul').append('<li><span class="label success">' + $(ui.draggable).text() + '</span>' + $(ui.draggable).find('.indetails').html() + '</li>').fadeIn();
 
 				$(this).parent().parent().find('li:last > .hidquant').attr('name','step' + stepindex + 'quantity[]');
 				$(this).parent().parent().find('li:last > .hidmeas').attr('name','step' + stepindex + 'measurement[]');
 				$(this).parent().parent().find('li:last > .hidname').attr('name','step' + stepindex + 'ingredientname[]');
+				$( ".ingredient" ).draggable({revert: "invalid"});
 			}
 		});
-		});
-
 		
-		$( ".stepinput" ).droppable({
+		});
+	$( ".stepinput" ).droppable({
 			hoverClass: "success",
 			drop: function( event, ui ) {
 				var stepindex = $(this).parent().parent().index() - 1;
-				$(ui.draggable).fadeOut().remove();
-				$(this).parent().parent().find('td:last > ul').append('<li><span class="label success">' + $(ui.draggable).text() + '</span>' + $(ui.draggable).find('.indetails').html() + '</li>').fadeIn();
+
+				$(ui.draggable).appendTo($(this).parent().parent().find('td:last > ul')).hide().fadeIn();
+				$(this).parent().parent().find('td:last > ul > li:last span').addClass('success');
+				$(this).parent().parent().find('td:last > ul > li:last').attr('style','');
+				//$(ui.draggable).addClass('success');
+			//	$(this).parent().parent().find('td:last > ul').append('<li><span class="label success">' + $(ui.draggable).text() + '</span>' + $(ui.draggable).find('.indetails').html() + '</li>').fadeIn();
 
 				$(this).parent().parent().find('li:last > .hidquant').attr('name','step' + stepindex + 'quantity[]');
 				$(this).parent().parent().find('li:last > .hidmeas').attr('name','step' + stepindex + 'measurement[]');
 				$(this).parent().parent().find('li:last > .hidname').attr('name','step' + stepindex + 'ingredientname[]');
+				$( ".ingredient" ).draggable({revert: "invalid"});
 			}
 		});
-		          
 	});
 </script>
 <div class="page-header">
     <h1>Edit Your Recipe</h1>
   </div>
   <div class="span16">
-      <form method="POST" action="/recipes">
+      <form method="PUT" action="/recipes">
         <fieldset>
         <div id="recipemeta">
           <legend style="padding-bottom: 20px;">Tell Us About It</legend>
