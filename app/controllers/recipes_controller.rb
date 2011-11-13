@@ -25,10 +25,10 @@ class RecipesController < ApplicationController
   # GET /recipes/new.xml
   def new
     @recipe = Recipe.new
-    1.times do 
+    5.times do 
       step = @recipe.steps.build
-      1.times do 
-        step.ingredients.build
+      5.times do 
+	step.ingredients.build
       end
     end
 

@@ -1,9 +1,0 @@
-<div class="fields">
-	<p>
-    	<%= f.label :Step %> <br />
-	    <%= f.text_area :description, :rows => 3 %>
-  	</p>
-	<% f.fields_for :ingredients do |builder| %>
-		<%= render 'ingredient_fields', :f => builder %>
-	<% end %>
-</div>
