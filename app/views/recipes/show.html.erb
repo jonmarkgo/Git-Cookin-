@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+    
+    <div class="content">
+      <p id="notice"><%= notice %></p>
 
 <p>
   <b>Name:</b>
@@ -6,8 +8,8 @@
 </p>
 
 <p>
-	<b>Description</b>
-	<%= @recipe.description %>
+  <b>Description</b>
+  <%= @recipe.description %>
 </p>
 
 <p>
@@ -41,16 +43,22 @@
     <th>Ingredients</th>
  </tr>
  <tr>
-	<% @recipe.steps.each do |step| %>
-  	<td><%= step.description %></td>
-	<td><ul>
-		<% step.ingredients.each do |ingredient| %>
-  		<li><%= ingredient.name %></li>
-		<% end %>
-	</ul></td>
-	<% end %>
+  <% @recipe.steps.each do |step| %>
+    <td><%= step.description %></td>
+  <td><ul>
+    <% step.ingredients.each do |ingredient| %>
+      <li><%= ingredient.name %></li>
+    <% end %>
+  </ul></td>
+  <% end %>
 </tr>
 
-	
+  
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>
+
+    </div>
+    <div class="sidebar">
+      ...
+    </div>
+    

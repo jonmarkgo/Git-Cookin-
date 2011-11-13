@@ -411,3 +411,632 @@ Started GET "/recipes" for 127.0.0.1 at 2011-11-12 17:22:03 -0500
   [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
 Rendered recipes/index.html.erb within layouts/application (3.0ms)
 Completed 200 OK in 28ms (Views: 15.0ms | ActiveRecord: 1.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /home/jonmarkgo/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-12 19:24:28 -0500
+  Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (0.5ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+Rendered ingredients/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 73ms (Views: 7.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/r" for 127.0.0.1 at 2011-11-12 19:24:43 -0500
+
+ActionController::RoutingError (No route matches "/r"):
+  
+
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-11-12 19:24:44 -0500
+  Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.5ms)[0m  SELECT "recipes".* FROM "recipes"
+Rendered recipes/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 73ms (Views: 16.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2011-11-12 19:24:44 -0500
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 1 LIMIT 1
+Rendered recipes/show.html.erb within layouts/application (23.1ms)
+Completed 500 Internal Server Error in 77ms
+
+ActionView::Template::Error (undefined method `preperationtime' for #<Recipe:0x000000034793b8>):
+    14: 
+    15: <p>
+    16:   <b>Preperation Time:</b>
+    17:   <%= @recipe.preperationtime %>
+    18: </p>
+    19: 
+    20: <p>
+  app/views/recipes/show.html.erb:17:in `_app_views_recipes_show_html_erb__16749866969879520_27466620_3859901965458037804'
+  app/controllers/recipes_controller.rb:18:in `show'
+
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.0ms)
+
+
+Started GET "/recipes/" for 127.0.0.1 at 2011-11-12 19:24:47 -0500
+  Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.5ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+Rendered recipes/index.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 30ms (Views: 15.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-11-12 19:24:48 -0500
+  Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (1.3ms)[0m  SELECT "recipes".* FROM "recipes"
+Rendered recipes/index.html.erb within layouts/application (51.4ms)
+Completed 200 OK in 73ms (Views: 55.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/recipes/" for 127.0.0.1 at 2011-11-12 19:24:55 -0500
+  Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.7ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+Rendered recipes/index.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 31ms (Views: 17.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2011-11-12 19:24:55 -0500
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 1 LIMIT 1
+Rendered recipes/show.html.erb within layouts/application (13.1ms)
+Completed 500 Internal Server Error in 84ms
+
+ActionView::Template::Error (undefined method `preperationtime' for #<Recipe:0x000000044a6628>):
+    14: 
+    15: <p>
+    16:   <b>Preperation Time:</b>
+    17:   <%= @recipe.preperationtime %>
+    18: </p>
+    19: 
+    20: <p>
+  app/views/recipes/show.html.erb:17:in `_app_views_recipes_show_html_erb__16749866969879520_35922960_3859901965458037804'
+  app/controllers/recipes_controller.rb:18:in `show'
+
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.6ms)
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.2ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2011-11-12 19:25:08 -0500
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 1 LIMIT 1[0m
+Rendered recipes/show.html.erb within layouts/application (10.6ms)
+Completed 500 Internal Server Error in 62ms
+
+ActionView::Template::Error (undefined method `preparationtime' for #<Recipe:0x000000045696f0>):
+    14: 
+    15: <p>
+    16:   <b>Preperation Time:</b>
+    17:   <%= @recipe.preparationtime %>
+    18: </p>
+    19: 
+    20: <p>
+  app/views/recipes/show.html.erb:17:in `_app_views_recipes_show_html_erb__16749866969879520_36371720_3859901965458037804'
+  app/controllers/recipes_controller.rb:18:in `show'
+
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.6ms)
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.7ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2011-11-12 19:25:08 -0500
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 1 LIMIT 1
+Rendered recipes/show.html.erb within layouts/application (11.0ms)
+Completed 500 Internal Server Error in 60ms
+
+ActionView::Template::Error (undefined method `preparationtime' for #<Recipe:0x00000002202f40>):
+    14: 
+    15: <p>
+    16:   <b>Preperation Time:</b>
+    17:   <%= @recipe.preparationtime %>
+    18: </p>
+    19: 
+    20: <p>
+  app/views/recipes/show.html.erb:17:in `_app_views_recipes_show_html_erb__16749866969879520_25376180_3859901965458037804'
+  app/controllers/recipes_controller.rb:18:in `show'
+
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /home/jonmarkgo/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2011-11-12 19:25:14 -0500
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 1 LIMIT 1
+Rendered recipes/show.html.erb within layouts/application (24.0ms)
+Completed 500 Internal Server Error in 127ms
+
+ActionView::Template::Error (undefined method `preparationtime' for #<Recipe:0x000000034abac0>):
+    14: 
+    15: <p>
+    16:   <b>Preperation Time:</b>
+    17:   <%= @recipe.preparationtime %>
+    18: </p>
+    19: 
+    20: <p>
+  app/views/recipes/show.html.erb:17:in `_app_views_recipes_show_html_erb__863307451565153490_27478400__1731905027630520712'
+  app/controllers/recipes_controller.rb:18:in `show'
+
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.9ms)
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateIngredients (20111112182603)
+Migrating to CreateSteps (20111112183554)
+Migrating to CreateRecipes (20111112184531)
+Migrating to CreateForks (20111112193329)
+Migrating to AddPreperationtimeToRecipes (20111112230957)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.3ms)[0m  [1mALTER TABLE "recipes" ADD "preperationtime" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111112230957')
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("forks")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("ingredients")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("recipes")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("steps")[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /home/jonmarkgo/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2011-11-12 19:25:38 -0500
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 1 LIMIT 1
+Rendered recipes/show.html.erb within layouts/application (25.6ms)
+Completed 500 Internal Server Error in 136ms
+
+ActionView::Template::Error (undefined method `preparationtime' for #<Recipe:0x0000000381b958>):
+    14: 
+    15: <p>
+    16:   <b>Preperation Time:</b>
+    17:   <%= @recipe.preparationtime %>
+    18: </p>
+    19: 
+    20: <p>
+  app/views/recipes/show.html.erb:17:in `_app_views_recipes_show_html_erb___657468481792903502_29376940__538815107399163008'
+  app/controllers/recipes_controller.rb:18:in `show'
+
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (29.8ms)
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (34.5ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2011-11-12 19:25:46 -0500
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 1 LIMIT 1[0m
+Rendered recipes/show.html.erb within layouts/application (12.1ms)
+Completed 500 Internal Server Error in 33ms
+
+ActionView::Template::Error (undefined method `preparationtime' for #<Recipe:0x000000033e3458>):
+    14: 
+    15: <p>
+    16:   <b>Preperation Time:</b>
+    17:   <%= @recipe.preparationtime %>
+    18: </p>
+    19: 
+    20: <p>
+  app/views/recipes/show.html.erb:17:in `_app_views_recipes_show_html_erb___657468481792903502_27135360__538815107399163008'
+  app/controllers/recipes_controller.rb:18:in `show'
+
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.6ms)
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.8ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2011-11-12 19:25:47 -0500
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 1 LIMIT 1
+Rendered recipes/show.html.erb within layouts/application (37.8ms)
+Completed 500 Internal Server Error in 56ms
+
+ActionView::Template::Error (undefined method `preparationtime' for #<Recipe:0x000000025222e8>):
+    14: 
+    15: <p>
+    16:   <b>Preperation Time:</b>
+    17:   <%= @recipe.preparationtime %>
+    18: </p>
+    19: 
+    20: <p>
+  app/views/recipes/show.html.erb:17:in `_app_views_recipes_show_html_erb___657468481792903502_19163920__538815107399163008'
+  app/controllers/recipes_controller.rb:18:in `show'
+
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.1ms)
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (118.3ms)[0m  CREATE TABLE "forks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "parent_id" integer, "child_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (84.0ms)[0m  CREATE TABLE "ingredients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "step_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (108.6ms)[0m  CREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "timetocook" integer, "servings" integer, "votes_up" integer, "votes_down" integer, "created_at" datetime, "updated_at" datetime, "description" varchar(255), "preperationtime" integer) 
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (87.1ms)[0m  CREATE TABLE "steps" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "recipe_id" integer, "seq" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (94.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (62.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (65.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111112230957')[0m
+  [1m[35mSQL (75.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111112183554')
+  [1m[36mSQL (74.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111112182603')[0m
+  [1m[35mSQL (91.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111112193329')
+  [1m[36mSQL (74.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111112184531')[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (132.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (75.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to CreateIngredients (20111112182603)
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE TABLE "ingredients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "step_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111112182603')
+Migrating to CreateSteps (20111112183554)
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE TABLE "steps" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "recipe_id" integer, "seq" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111112183554')
+Migrating to CreateRecipes (20111112184531)
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "timetocook" integer, "servings" integer, "votes_up" integer, "votes_down" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111112184531')
+Migrating to CreateForks (20111112193329)
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE TABLE "forks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "parent_id" integer, "child_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111112193329')
+Migrating to AddPreperationtimeToRecipes (20111112230957)
+  [1m[36mSQL (0.4ms)[0m  [1mALTER TABLE "recipes" ADD "preperationtime" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111112230957')
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("forks")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("ingredients")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("recipes")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("steps")[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /home/jonmarkgo/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2011-11-12 19:26:26 -0500
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 1 LIMIT 1
+Completed 404 Not Found in 98ms
+
+ActiveRecord::RecordNotFound (Couldn't find Recipe with ID=1):
+  app/controllers/recipes_controller.rb:16:in `show'
+
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.6ms)
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.6ms)
+
+
+Started GET "/recipes/" for 127.0.0.1 at 2011-11-12 19:26:30 -0500
+  Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+Rendered recipes/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 44ms (Views: 5.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-11-12 19:26:31 -0500
+  Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT "recipes".* FROM "recipes"
+Rendered recipes/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 20ms (Views: 6.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-11-12 19:26:32 -0500
+  Processing by RecipesController#new as HTML
+ERROR: compiling _app_views_recipes__form_html_erb___410943191354924562_20622980_3951398844335923839 RAISED /home/jonmarkgo/Git-Cookin-/app/views/recipes/_form.html.erb:39: syntax error, unexpected tCONSTANT, expecting ')'
+....append= ( f.label :Recipe Name );@output_buffer.safe_concat...
+...                               ^
+/home/jonmarkgo/Git-Cookin-/app/views/recipes/_form.html.erb:54: syntax error, unexpected tCONSTANT, expecting ')'
+...nd= ( f.label :Preparation Time );@output_buffer.safe_concat...
+...                               ^
+/home/jonmarkgo/Git-Cookin-/app/views/recipes/_form.html.erb:59: syntax error, unexpected tIDENTIFIER, expecting ')'
+...ffer.append= ( f.label :Time to cook );@output_buffer.safe_c...
+...                               ^
+Function body:           def _app_views_recipes__form_html_erb___410943191354924562_20622980_3951398844335923839(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "recipes/_form";_old_output_buffer = @output_buffer;form = local_assigns[:form];;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.append=  form_for(@recipe) do |f| @output_buffer.safe_concat('
+');   if @recipe.errors.any? 
+@output_buffer.safe_concat('    <div id="error_explanation">
+      <h2>');@output_buffer.append= ( pluralize(@recipe.errors.count, "error") );@output_buffer.safe_concat(' prohibited this recipe from being saved:</h2>
+
+      <ul>
+');@output_buffer.append_if_string=        @recipe.errors.full_messages.each do |msg| 
+@output_buffer.safe_concat('        <li>');@output_buffer.append= ( msg );@output_buffer.safe_concat('</li>
+');       end 
+@output_buffer.safe_concat('      </ul>
+    </div>
+');   end 
+@output_buffer.safe_concat('
+  <div class="field">
+    ');@output_buffer.append= ( f.label :name );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :name );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :timetocook );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :timetocook );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :servings );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :servings );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :votes_up );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :votes_up );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :votes_down );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :votes_down );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="actions">
+    ');@output_buffer.append= ( f.submit );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+
+  <div class="field">
+    ');@output_buffer.append= ( f.label :Recipe Name );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :name );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+
+  <div class="field">
+    ');@output_buffer.append= ( f.label :Description );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :description );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+
+  <div class="field">
+    ');@output_buffer.append= ( f.label :Servings );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :servings );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+
+  <div class="field">
+    ');@output_buffer.append= ( f.label :Preparation Time );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append= ( f.text_field :preparationtime );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+
+  <div class="field">
+    ');@output_buffer.append= ( f.label :Time to cook );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append= ( f.text_field :timetocook );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+
+  <div class="field">
+    ');@output_buffer.append= ( f.label :Tags );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append= ( f.text_field :tags );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div> 
+  
+  <h2>Steps</h2>
+');@output_buffer.append_if_string=    @recipes.steps do |step| 
+@output_buffer.safe_concat('  <div class="field">
+    ');@output_buffer.append= ( f.label :Steps );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append= ( f.text_field :step );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+');   end 
+@output_buffer.safe_concat('
+  <h2>Ingredients</h2>
+');@output_buffer.append_if_string=    @recipes.ingredients do |ingredient| 
+@output_buffer.safe_concat('  <div class="field">
+    ');@output_buffer.append= ( f.label :Ingredients );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append= ( f.text_field :ingredient );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+');   end  
+@output_buffer.safe_concat('
+  <div class="actions">
+    ');@output_buffer.append= ( f.submit );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+'); end 
+@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `module_eval'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `compile'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `block in render'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:333:in `render_partial'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:262:in `block in render'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:260:in `render'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:378:in `_render_partial'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:31:in `render'
+/home/jonmarkgo/Git-Cookin-/app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb___4594569402687654549_20714200_3400150872136261908'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:135:in `block in render'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/jonmarkgo/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:261:in `block in retrieve_response_from_mimes'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/home/jonmarkgo/Git-Cookin-/app/controllers/recipes_controller.rb:29:in `new'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:436:in `_run__668332275972091815__process_action__722877625901781226__callbacks'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `block in action'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:82:in `optimized_each'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/methodoverride.rb:24:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `block in call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/sendfile.rb:106:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/runtime.rb:17:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/lock.rb:11:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/content_length.rb:13:in `call'
+/home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.4/lib/rack/handler/webrick.rb:52:in `service'
+/home/jonmarkgo/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/home/jonmarkgo/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/home/jonmarkgo/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered recipes/_form.html.erb (13.6ms)
+Rendered recipes/new.html.erb within layouts/application (14.8ms)
+Completed 500 Internal Server Error in 32ms
+
+ActionView::Template::Error (/home/jonmarkgo/Git-Cookin-/app/views/recipes/_form.html.erb:39: syntax error, unexpected tCONSTANT, expecting ')'
+....append= ( f.label :Recipe Name );@output_buffer.safe_concat...
+...                               ^
+/home/jonmarkgo/Git-Cookin-/app/views/recipes/_form.html.erb:54: syntax error, unexpected tCONSTANT, expecting ')'
+...nd= ( f.label :Preparation Time );@output_buffer.safe_concat...
+...                               ^
+/home/jonmarkgo/Git-Cookin-/app/views/recipes/_form.html.erb:59: syntax error, unexpected tIDENTIFIER, expecting ')'
+...ffer.append= ( f.label :Time to cook );@output_buffer.safe_c...
+...                               ^):
+    36:   </div>
+    37: 
+    38:   <div class="field">
+    39:     <%= f.label :Recipe Name %><br />
+    40:     <%= f.text_field :name %>
+    41:   </div>
+    42: 
+  app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb___4594569402687654549_20714200_3400150872136261908'
+  app/controllers/recipes_controller.rb:29:in `new'
+
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (34.0ms)
+Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (38.2ms)

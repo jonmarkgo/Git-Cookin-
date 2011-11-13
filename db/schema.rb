@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(:version => 20111112230957) do
     t.integer  "votes_down"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "description"
     t.integer  "preperationtime"
   end
 
