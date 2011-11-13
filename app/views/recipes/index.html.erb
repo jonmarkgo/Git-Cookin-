@@ -8,6 +8,7 @@
     <th>Votes up</th>
     <th>Votes down</th>
     <th>Servings</th>
+	<th>Description</th>
     <th></th>
     <th></th>
     <th></th>
@@ -21,6 +22,7 @@
     <td><%= recipe.votes_up %></td>
     <td><%= recipe.votes_down %></td>
     <td><%= recipe.servings %></td>
+	<td><%= recipe.description %></td>
     <td><%= link_to 'Show', recipe %></td>
     <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
     <td><%= link_to 'Destroy', recipe, :confirm => 'Are you sure?', :method => :delete %></td>
