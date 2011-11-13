@@ -1,40 +1,51 @@
-<<<<<<< HEAD
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gitcookin</title>
+  <link rel="stylesheet" href="//twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
 
-<p>
-  <b>Name:</b>
-  <%= @recipe.name %>
-</p>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+  <script src="//twitter.github.com/bootstrap/1.4.0/bootstrap-tabs.js" type="text/javascript"></script>
+  <script src="//twitter.github.com/bootstrap/1.4.0/bootstrap-dropdown.js" type="text/javascript"></script>
+  <script>
+  $(function () {
+    $('.tabs').tabs();
+    $('#topbar').dropdown();
+  })
+</script>
 
-<p>
-  <b>User:</b>
-  <%= @recipe.user_id %>
-</p>
+</head>
 
-<p>
-  <b>Parent:</b>
-  <%= @recipe.parent_id %>
-</p>
+<body style="padding-top: 60px;">
+<div class="topbar">
+      <div class="topbar-inner">
+        <div class="container">
+          <h3><a href="#">GIT COOKIN'</a></h3>
+          
+          <form class="pull-left" action="">
+            <input type="text" placeholder="What do you want to cook?">
+          </form>
+          <ul class="nav secondary-nav" data-dropdown="dropdown">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle">JonMarkGo</a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Secondary link</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Another link</a></li>
+              </ul>
+            </li>
+          </ul>
+  </li>
+</ul>
+        </div>
+      </div><!-- /topbar-inner -->
+    </div>
+  <div class="container">
+      
+    <div class="content">
 
-<p>
-  <b>Votes up:</b>
-  <%= @recipe.votes_up %>
-</p>
 
-<p>
-  <b>Votes down:</b>
-  <%= @recipe.votes_down %>
-</p>
-
-<p>
-  <b>Servings:</b>
-  <%= @recipe.servings %>
-</p>
-
-
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
-=======
   <div class="row">
     <div class="span8">
       <h1>Chicken Marsala</h1>
@@ -133,6 +144,26 @@
 
         <li><a href="#new_forks">New</a></li>
       </ul>
+      <div class="tab-content">
+      <div class="active" id="best_forks">BEST FORKS</div>
+      <div id="new_forks">NEW FORKS</div>
+      </div>
     </div>
   </div>
->>>>>>> 47ddf27bf35b0347f367fcae7ff741098c7f7784
+  </div>
+  </div>
+  <div id="fb-root"></div>
+
+  <script src="//connect.facebook.net/en_US/all.js"></script> 
+  <script>
+          window.fbAsyncInit = function() {
+            FB.init({
+              appId      : 199803463430362,
+              status     : true, 
+              cookie     : true,
+              xfbml      : true
+            });
+        };
+  </script>
+</body>
+</html>
