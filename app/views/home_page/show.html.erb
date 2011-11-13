@@ -1,7 +1,7 @@
 <h1></h1> 
 
 <div align="right">
-	<a class="btn js-btn" href="./createRecipe">Create New Recipe</a>
+	<a class="btn js-btn" href="/recipes/new">Create New Recipe</a>
 </div>
 <div class="container">
 
@@ -9,14 +9,14 @@
 
 		<div class="span10">
 
- 			Moving Pics
-			<img src="http://placehold.it/550x250">
+ 			
+			<img src="/images/HomePagePic.jpg">
 
 		</div>
 
 		<div class="span6">
 			 Users
-			<div style="height:246px;border:2px solid black;">
+			<div style="height:280px;border:2px solid black;">
 			 Users
 			</div>
 
@@ -32,21 +32,43 @@
 
 	<div class="row show-grid" >
 		 <div class="span10">
-			   <div style="width:550px;height:300px;border:2px solid black;">
+			   <div style="width:550px;height:500px;border:2px solid black;">
 			    Cooking Feeds
 			    </div>
 		 </div>
 
 		<div class="span6">
-			  <div style="height:300px;border:2px solid black;">
+			  <div style="height:500px;border:2px solid black;">
 			       <ul class="tabs">
 			                   
-					 <li class="active"><a href="/getTopRecipes">Top Recipes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+					 <li class="active"><a href="#getTopRecipes">Top Recipes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
 					 
 					 
-					 <li><a href="/getNewRecipies">New Recipes</a></li>
+					
 					 
+					 
+					 <li><a href="#getNewRecipes">New Recipes</a></li>
+					  
 				</ul>
+				<div class="tab-content">
+					<div class="active" id="getTopRecipes">
+					  <% @toprecipes.each do |recipe| %>
+						   <div class="row">
+						   <div class="span1"><img class="thumbnail" src="http://placehold.it/50x50" alt=""></div>
+						   <div class="span3"><ul class="unstyled"><li><a href="/recipes/<%= recipe.id%>">	<%= recipe.name %> </a></li> <table><tr><td><img src="/images/UpForkMini.png"/><%= recipe.votes_up %></td><td> <img src="/images/DownForkMini.png"/><%= recipe.votes_down %></td></tr></table> <li></li></ul></div>
+					   </div>
+					   <% end %> 
+					</div>
+					
+					<div id="getNewRecipes">
+					   <% @newrecipes.each do |recipe| %>
+					   <div class="row">
+						<div class="span1"><img class="thumbnail" src="http://placehold.it/50x50" alt=""></div>
+                				<div class="span3"><ul class="unstyled"><li><a href="/recipes/<%= recipe.id%>">	<%= recipe.name %> </a></li> <table><tr><td><img src="/images/UpForkMini.png"/><%= recipe.votes_up %></td><td> <img src="/images/DownForkMini.png"/><%= recipe.votes_down %></td></tr></table> <li></li></ul></div>
+					   </div>
+					   <% end %> 
+					</div>
+				</div>
 			   </div>
 		</div>
 
