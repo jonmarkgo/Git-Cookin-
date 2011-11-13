@@ -41,6 +41,7 @@ class RecipesController < ApplicationController
   # POST /recipes
   # POST /recipes.xml
   def create
+    p = params
     @recipe = Recipe.new(:name => p[:recipename],
     :servings => p[:servings],
     :description => p[:description],
@@ -48,7 +49,7 @@ class RecipesController < ApplicationController
     :votes_up => 0
     )
     
-    addStepToRecipe(@recipe,params)
+    addToRecipe(@recipe,params)
     
     respond_to do |format|
       if @recipe.save
@@ -82,6 +83,7 @@ class RecipesController < ApplicationController
         id = Ingredient.find_or_create_by_name(names[iindex]).id
         ing = StepIngredient.new(:quanity => mquantity, :measurement => measurment, :ingredient_id => id)
         mStep.step_ingredients << ing
+        ing.save
       end
       
       recipe.steps << mStep
@@ -97,24 +99,34 @@ class RecipesController < ApplicationController
     addToRecipe(@recipe, params)
     
     @recipe.steps.each do |step|
-      step.step_ingredients.each do |si|
-        prefix = "step"+String(step.id)
-        quantity = params[prefix+"quantity"+String(si.id)]
-        measurement = params[prefix+"measurement"+String(si.id)]
-        ingredientname = params[prefix+"ingredientname"+String(si.id)]
+     
+        prefix = "stepstep"+String(step.id)
+        quantity = params[prefix+"quantity"]
+        measurement = params[prefix+"measurement"]
+        ingredientname = params[prefix+"ingredientname"]
+        if quantity == nil then next end
+        quantity.each_with_index do |mquantity,iindex|
+          if mquantity == "" then next end
+          measurment = measurement[iindex]
+          id = Ingredient.find_or_create_by_name(ingredientname[iindex]).id
+          ing = StepIngredient.new(:quanity => mquantity, :measurement => measurment, :ingredient_id => id)
+          step.step_ingredients << ing
+
+        end
+
+       # puts "modified: #{si.inspect}"
         
-        puts "modified: #{si.inspect}"
+       # si.quanity = quantity
+       # si.measurement = measurement
+       # si.ingredient_id = Ingredient.find_or_create_by_name(ingredientname).id
+       # si.save!
         
-        si.quanity = quantity
-        si.measurement = measurement
-        si.ingredient_id = Ingredient.find_or_create_by_name(ingredientname).id
-        si.save!
+        #puts "to: #{si.inspect}"
         
-        puts "to: #{si.inspect}"
-        
-      end
+      
+
     end
-    
+@recipe.save    
 
     respond_to do |format|
       if @recipe.update_attributes(params[:recipe])
