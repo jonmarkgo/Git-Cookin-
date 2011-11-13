@@ -14,7 +14,8 @@ class RecipesController < ApplicationController
   # GET /recipes/1.xml
   def show
     @recipe = Recipe.find(params[:id])
-
+    @newrecipes = Recipe.find_all_by_parent_id(@recipe.id, :order => "id desc", :limit => 5)
+    @toprecipes = Recipe.find_all_by_parent_id(@recipe.id, :order => "votes_up desc", :limit => 5)
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @recipe }
@@ -153,47 +154,6 @@ def fork
     
     redirect_to(@recipe, :notice => 'Recipe was successfully forked.')
   end
-end
-
-
-#recipes/1/diff
-def diff
-    @childRecipe = Recipe.find(params[:id])
-    @parentRecipe = @childRecipe.parent
-    
-    parentHash = {}
-    @parentRecipe.steps.each do |step|
-      step.step_ingredients.each do |si|
-        parentHash[step.id.to_s+"_"+si.id.to_s] = si
-      end
-    end
-    
-    @diff = []
-    
-    @childRecipe.steps.each do |step|
-      step.step_ingredients.each do |si|
-        orgStep = parentHash[String(step.parent_id)+"_"+String(si.parent_id)] 
-        if orgStep == nil #Addition
-          @diff << "Added #{si.quanity} #{si.measurement} of #{si.ingredient.name}"
-        elsif orgStep.quanity != si.quanity
-          @diff << "Modified #{si.ingredient.name} to #{si.quanity} #{si.measurement}"
-          parentHash.delete(String(step.parent_id)+"_"+String(si.parent_id))
-        elsif orgStep.measurement != si.measurement
-          @diff << "Modified #{si.measurement} to #{si.measurement}"
-          parentHash.delete(String(step.parent_id)+"_"+String(si.parent_id))
-        else #Nothing changed
-          parentHash.delete(String(step.parent_id)+"_"+String(si.parent_id))          
-        end
-      end
-    end
-    
-    parentHash.each do |key, value| 
-       @diff << "Deleted #{value.ingredient.name}"
-    end
-    
-    respond_to do |format|
-      format.html {  render :action => "diff" }
-    end
 end
 
 end
