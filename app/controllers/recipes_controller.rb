@@ -95,6 +95,9 @@ class RecipesController < ApplicationController
   # PUT /recipes/1.xml
   def update
     @recipe = Recipe.find(params[:id])
+    @recipe.name = params[:recipename]
+    @recipe.servings = params[:servings]
+    @recipe.description = params[:description]
     
     addToRecipe(@recipe, params)
     
