@@ -13,9 +13,24 @@
 
 </head>
 
-<body>
-  <div class="container-fluid">
+<body style="padding-top: 40px;">
+<div class="topbar" data-dropdown="dropdown">
+      <div class="topbar-inner">
+        <div class="container">
+          <h3><a href="#">GIT COOKIN'</a></h3>
+          
+          <form class="pull-left" action="">
+            <input type="text" placeholder="What do you want to cook?">
+          </form>
+         
+        </div>
+      </div><!-- /topbar-inner -->
+    </div>
+  <div class="container">
+      
+    <div class="content">
 <%= yield %>
+</div>
   </div>
   <div id="fb-root"></div>
 

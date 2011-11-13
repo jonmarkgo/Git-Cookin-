@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20111112230957) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "preperationtime"
+    t.string   "description"
   end
 
   create_table "steps", :force => true do |t|

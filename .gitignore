@@ -2,5 +2,5 @@
 .DS_Store
 .gaedata/
 *#*
-db/*.sqlite3
-log/*.log
+*.sqlite3
+*.log

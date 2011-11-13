@@ -1,0 +1,57 @@
+
+      <p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @recipe.name %>
+</p>
+
+<p>
+  <b>Description</b>
+  <%= @recipe.description %>
+</p>
+
+<p>
+  <b>Preperation Time:</b>
+  <%= @recipe.preperationtime %>
+</p>
+
+<p>
+  <b>Timetocook:</b>
+  <%= @recipe.timetocook %>
+</p>
+
+<p>
+  <b>Servings:</b>
+  <%= @recipe.servings %>
+</p>
+
+<p>
+  <b>Votes up:</b>
+  <%= @recipe.votes_up %>
+</p>
+
+<p>
+  <b>Votes down:</b>
+  <%= @recipe.votes_down %>
+</p>
+
+<table>
+  <tr>
+    <th>Steps</th>
+    <th>Ingredients</th>
+ </tr>
+ <tr>
+  <% @recipe.steps.each do |step| %>
+    <td><%= step.description %></td>
+  <td><ul>
+    <% step.ingredients.each do |ingredient| %>
+      <li><%= ingredient.name %></li>
+    <% end %>
+  </ul></td>
+  <% end %>
+</tr>
+
+  
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Back', recipes_path %>
