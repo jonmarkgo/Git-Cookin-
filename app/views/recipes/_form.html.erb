@@ -1,3 +1,10 @@
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#step-button").click(function() {
+		$("#step_container").append("<div><form action='meh.php'><input type='text' value='meh'><input type='text' value='1'></form><a href='#' class='removeme'>Remove</a></div>");
+	});
+});
+</script>
 <%= form_for(@recipe) do |f| %>
   <% if @recipe.errors.any? %>
     <div id="error_explanation">
@@ -36,21 +43,14 @@
     <%= f.text_field :timetocook %>
   </div>
 
-  
+  <div id="step_container">
+	</div>
+	<a href="#" id="step-button">Add Step</a>
   <h2>Steps</h2> 
   <%= f.fields_for :steps do |builder| %> 
-  <p>
-    <%= builder.label :Step %> <br />
-    <%= builder.text_area :description, :rows => 3 %>
-  </p>
-    <%= builder.fields_for :ingredients do |cp| %>
-    <p>
-      <%= cp.label :Ingredient %> <br />
-      <%= cp.text_field :name %> 
-    </p>
-    <% end %>
-
+	<%= render "step_fields", :f => builder %>
   <% end %>
+
 
   <div class="actions">
     <%= f.submit %>
