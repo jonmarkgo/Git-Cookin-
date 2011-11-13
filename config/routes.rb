@@ -10,10 +10,6 @@ Gitcookin::Application.routes.draw do
   end
   
 
-  resources :steps
-
-  resources :ingredients
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
