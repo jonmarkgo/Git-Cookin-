@@ -52,7 +52,7 @@
             <tr>
               <td>
                 <ul class="unstyled">
-                <% @step.step_ingredients.each do |step_ingredient| %>
+                <% step.step_ingredients.each do |step_ingredient| %>
                   <li><%= step_ingredient.quanity %> <%= step_ingredient.measurement %> <%= step_ingredient.ingredient.name %></li>
                   <% end %>
                 </ul>
