@@ -9,18 +9,18 @@ module RecipesHelper
       end
     end
     
-    @diff = []
+    @diff = ''
     
     childRecipe.steps.each do |step|
       step.step_ingredients.each do |si|
         orgStep = parentHash[String(step.parent_id)+"_"+String(si.parent_id)] 
         if orgStep == nil #Addition
-          @diff << "Added #{si.quanity} #{si.measurement} #{si.ingredient.name}"
+          @diff = @diff + "Added #{si.quanity} #{si.measurement} #{si.ingredient.name} "
         elsif orgStep.quanity != si.quanity
-          @diff << "Changed #{si.ingredient.name} to #{si.quanity} #{si.measurement}"
+          @diff = @diff + "Changed #{si.ingredient.name} to #{si.quanity} #{si.measurement} "
           parentHash.delete(String(step.parent_id)+"_"+String(si.parent_id))
         elsif orgStep.measurement != si.measurement
-          @diff << "Changed #{si.measurement} to #{si.measurement}"
+          @diff = @diff + "Changed #{si.measurement} to #{si.measurement} "
           parentHash.delete(String(step.parent_id)+"_"+String(si.parent_id))
         else #Nothing changed
           parentHash.delete(String(step.parent_id)+"_"+String(si.parent_id))          
@@ -29,7 +29,7 @@ module RecipesHelper
     end
     
     parentHash.each do |key, value| 
-       @diff << "Deleted #{value.ingredient.name}"
+       @diff = @diff + "Deleted #{value.ingredient.name} "
     end
     return @diff
 end
