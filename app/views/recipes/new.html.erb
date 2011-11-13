@@ -5,12 +5,12 @@ if ($("#recipemeta").is(":visible")) {
 		$("#recipemeta").hide("drop",{},"fast",function() {
 			$("#ingredcont").show();
 		$("#ingredients").show("drop",{},"fast");	
-		$("#metacont").val("Back");
+		$("#metacont").text("Back");
 	});
 	}
 	else {
 		$("#recipemeta").show("drop",{},"fast",function() {
-			$("#metacont").val("Continue");
+			$("#metacont").text("Continue");
 			$("#ingredcont").hide();
 		$("#ingredients").hide("drop",{},"fast");	
 	});
@@ -24,12 +24,12 @@ if ($("#ingredients").is(":visible")) {
 			$("#metacont").hide();
 			$("#subbut").show();
 		$("#steppy").show("drop",{},"fast");	
-		$("#ingredcont").val("Back");
+		$("#ingredcont").text("Back");
 	});
 	}
 	else {
 		$("#ingredients").show("drop",{},"fast",function() {
-			$("#ingredcont").val("Continue");
+			$("#ingredcont").text("Continue");
 			$("#metacont").show();
 			$("#subbut").hide();
 		$("#steppy").hide("drop",{},"fast");	
@@ -135,6 +135,6 @@ if ($("#ingredients").is(":visible")) {
         </fieldset>
       </form>
        <div class="actions">
-            <input id="metacont" type="submit" class="btn primary" value="Continue">&nbsp;<input id="ingredcont" type="submit" style="display: none;" class="btn primary" value="Continue">&nbsp;<input id="subbut" type="submit" style="display: none;" class="btn primary" value="Post Recipe">
+<button class="btn" id="metacont">Continue</button>&nbsp;<button class="btn" id="ingredcont" style="display: none;">Continue</button>&nbsp;<input id="subbut" type="submit" style="display: none;" class="btn primary" value="Post Recipe">
           </div>
     </div>
