@@ -66,16 +66,18 @@ if ($("#ingredients").is(":visible")) {
 				$(this).parent().parent().find('td:last > ul > li:last').attr('style','');
 				//$(ui.draggable).addClass('success');
 			//	$(this).parent().parent().find('td:last > ul').append('<li><span class="label success">' + $(ui.draggable).text() + '</span>' + $(ui.draggable).find('.indetails').html() + '</li>').fadeIn();
-console.log($(this).parent().parent().find('td:last .hidquant'));
-				$(this).parent().parent().find('td:last > ul > li:last > .hidquant').attr('name','step' + stepindex + 'quantity[]');
-				$(this).parent().parent().find('td:last > ul > li:last > .hidmeas').attr('name','step' + stepindex + 'measurement[]');
-				$(this).parent().parent().find('td:last > ul > li:last > .hidname').attr('name','step' + stepindex + 'ingredientname[]');
+			if ($(this).parent().parent().find('td:first input').hasClass('existingstep')) {
+var stepindex = $(this).parent().parent().find('td:first input').attr('name');
+}
+				$(this).parent().parent().find('li:last .hidquant').attr('name','step' + stepindex + 'quantity[]');
+				$(this).parent().parent().find('li:last .hidmeas').attr('name','step' + stepindex + 'measurement[]');
+				$(this).parent().parent().find('li:last .hidname').attr('name','step' + stepindex + 'ingredientname[]');
 				$( ".ingredient" ).draggable({revert: "invalid"});
 			}
 		});
 		
 		});
-			$( ".stepinput" ).droppable({
+		$( ".stepinput" ).droppable({
 			hoverClass: "success",
 			drop: function( event, ui ) {
 				var stepindex = $(this).parent().parent().index() - 1;
@@ -85,10 +87,12 @@ console.log($(this).parent().parent().find('td:last .hidquant'));
 				$(this).parent().parent().find('td:last > ul > li:last').attr('style','');
 				//$(ui.draggable).addClass('success');
 			//	$(this).parent().parent().find('td:last > ul').append('<li><span class="label success">' + $(ui.draggable).text() + '</span>' + $(ui.draggable).find('.indetails').html() + '</li>').fadeIn();
-console.log($(this).parent().parent().find('td:last .hidquant'));
-				$(this).parent().parent().find('td:last > ul > li:last > .hidquant').attr('name','step' + stepindex + 'quantity[]');
-				$(this).parent().parent().find('td:last > ul > li:last > .hidmeas').attr('name','step' + stepindex + 'measurement[]');
-				$(this).parent().parent().find('td:last > ul > li:last > .hidname').attr('name','step' + stepindex + 'ingredientname[]');
+			if ($(this).parent().parent().find('td:first input').hasClass('existingstep')) {
+var stepindex = $(this).parent().parent().find('td:first input').attr('name');
+}
+				$(this).parent().parent().find('li:last .hidquant').attr('name','step' + stepindex + 'quantity[]');
+				$(this).parent().parent().find('li:last .hidmeas').attr('name','step' + stepindex + 'measurement[]');
+				$(this).parent().parent().find('li:last .hidname').attr('name','step' + stepindex + 'ingredientname[]');
 				$( ".ingredient" ).draggable({revert: "invalid"});
 			}
 		});
@@ -98,7 +102,7 @@ console.log($(this).parent().parent().find('td:last .hidquant'));
     <h1>Edit Your Recipe</h1>
   </div>
   <div class="span16">
-      <form method="POST" action="/recipes/<%= @recipe.id %>">
+      <form method="PUT" action="/recipes/<%= @recipe.id %>">
         <fieldset>
         <div id="recipemeta">
           <legend style="padding-bottom: 20px;">Tell Us About It</legend>
@@ -162,7 +166,7 @@ console.log($(this).parent().parent().find('td:last .hidquant'));
           <td>
               <div class="clearfix stepinput">
               <div class="input">
-                <input class="xlarge" type="text" name="step[]" value="<%= step.instruction %>">
+                <input class="xlarge existingstep" type="text" name="step<%= step.id %>" value="<%= step.instruction %>">
                 </div>
                </div>
             </td>
