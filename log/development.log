@@ -2272,3 +2272,11 @@ Started GET "/recipes/1" for 127.0.0.1 at 2011-11-12 19:50:37 -0500
   [1m[35mRecipe Load (0.5ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 1 LIMIT 1
 Rendered recipes/show.html.erb within layouts/application (2.0ms)
 Completed 200 OK in 25ms (Views: 5.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2011-11-12 19:51:55 -0500
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 1 LIMIT 1[0m
+Rendered recipes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 29ms (Views: 4.9ms | ActiveRecord: 0.5ms)
