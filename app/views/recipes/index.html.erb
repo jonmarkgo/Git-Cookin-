@@ -25,7 +25,7 @@
 	<td><%= recipe.description %></td>
     <td><%= link_to 'Show', recipe %></td>
     <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-    <td><%= link_to 'Destroy', recipe, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= button_to 'Destroy', recipe, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
