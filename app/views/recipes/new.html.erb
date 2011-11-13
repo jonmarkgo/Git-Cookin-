@@ -42,10 +42,25 @@ if ($("#ingredients").is(":visible")) {
 				$(".lastingred").after('<div class="clearfix lastingred">            <div class="input">              <div class="inline-inputs">                <input class="mini" type="text" placeholder="1">                <input class="small" type="text" placeholder="cup">                <input type="text" placeholder="whole what flour"> </div></div> </div>');
           $(this).parent().parent().parent().removeClass("lastingred");
 		});
-		$(".laststep input:last").live(
+		$(".laststep input").live(
 			'focus',function() {
-				$(".laststep").after('<div class="clearfix laststep"><div class="input"><input class="xlarge" type="text" placeholder="Combine milk and flour."> </div> </div>');
-				$(this).parent().parent().removeClass("laststep");
+				$(".laststep").after('<tr class="laststep"><td><div class="clearfix stepinput"><div class="input"><input class="xlarge" type="text" placeholder="Combine milk and flour."></div></div></td><td><ul class="unstyled"></ul></td></tr>');
+				$(this).parent().parent().parent().parent().removeClass("laststep");
+				$( ".stepinput" ).droppable({
+			hoverClass: "success",
+			drop: function( event, ui ) {
+				$(this).parent().parent().find('td:last > ul').append('<li><span class="label success">' + $(ui.draggable).text() + '</span></li>').fadeIn();
+			}
+		});
+		});
+
+		$( ".ingredient" ).draggable({ helper: "clone" });
+
+		$( ".stepinput" ).droppable({
+			hoverClass: "success",
+			drop: function( event, ui ) {
+				$(this).parent().parent().find('td:last > ul').append('<li><span class="label success">' + $(ui.draggable).text() + '</span></li>').hide().fadeIn();
+			}
 		});
 
 		          
@@ -97,19 +112,21 @@ if ($("#ingredients").is(":visible")) {
              <div id="steppy" style="display: none;">
              <div class="row">
              <div class="span2"><h3>Ingredients</h3>
-             <ul class="unstyled"><li><span class="label">apples</span></li><li><span class="label">feces</span></li></ul></div>
+             <ul class="unstyled"><li><span class="label ingredient">apples</span></li><li><span class="label ingredient">feces</span></li></ul></div>
              <div class="span14">
           <legend style="padding-bottom: 20px;">What Are The Steps?</legend>
           <table>
           <tr><th>Steps</th><th>Assigned Ingredients</th></tr>
           <tr class="laststep">
           <td>
-              
+              <div class="clearfix stepinput">
+              <div class="input">
                 <input class="xlarge" type="text" placeholder="Combine milk and flour.">
-               
+                </div>
+               </div>
             </td>
             <td>
-             <ul class="unstyled"><li><span class="label success">oranges</span></li></ul></td>
+             <ul class="unstyled"></ul></td>
              </tr>
              </table>
              </div>
