@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :RecipeName %><br />
+    <%= f.label :Recipe_name %><br />
     <%= f.text_field :name %>
   </div>
 
@@ -27,7 +27,12 @@
   </div>
 
   <div class="field">
-    <%= f.label :Timetocook %> <br />
+    <%= f.label :preperation_time %> <br />
+    <%= f.text_field :preperationtime %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cooking_time %> <br />
     <%= f.text_field :timetocook %>
   </div>
 
@@ -35,13 +40,13 @@
   <h2>Steps</h2> 
   <%= f.fields_for :steps do |builder| %> 
   <p>
-    <%= builder.label :Description %> <br />
+    <%= builder.label :Step %> <br />
     <%= builder.text_area :description, :rows => 3 %>
   </p>
     <%= builder.fields_for :ingredients do |cp| %>
     <p>
-      <%= cp.label :Ingredients %> <br />
-      <%= cp.text_area :name, :rows => 3 %> 
+      <%= cp.label :Ingredient %> <br />
+      <%= cp.text_field :name %> 
     </p>
     <% end %>
 

@@ -1809,6 +1809,7 @@ Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/act
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 >>>>>>> blah
 >>>>>>> d19c231c080ffdf2e0ceb60d890a98a31892eeb6
+<<<<<<< Updated upstream
 DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /home/jonmarkgo/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
 
 
@@ -1834,10 +1835,13 @@ ActionView::Template::Error (undefined method `description' for #<Recipe:0x00000
 Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
 Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
 Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.2ms)
+=======
+>>>>>>> Stashed changes
   [1m[36mSQL (0.3ms)[0m  [1m SELECT name
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
+<<<<<<< Updated upstream
   [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
   [1m[36mSQL (128.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
   [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schema_migrations")
@@ -1907,6 +1911,8 @@ Rendered /home/jonmarkgo/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/act
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
+=======
+>>>>>>> Stashed changes
   [1m[35mSQL (0.1ms)[0m   SELECT name
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
@@ -1917,6 +1923,7 @@ Migrating to CreateRecipes (20111112184531)
 Migrating to CreateForks (20111112193329)
 Migrating to AddDescriptionToRecipes (20111112221115)
   [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+<<<<<<< Updated upstream
   [1m[36mSQL (0.4ms)[0m  [1mALTER TABLE "recipes" ADD "description" varchar(255)[0m
   [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111112221115')
 Migrating to AddPreperationtimeToRecipes (20111112230957)
@@ -1925,6 +1932,16 @@ Migrating to AddPreperationtimeToRecipes (20111112230957)
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
   [1m[35mSQL (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+=======
+  [1m[36mSQL (0.3ms)[0m  [1mALTER TABLE "recipes" ADD "description" varchar(255)[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111112221115')
+Migrating to AddPreperationtimeToRecipes (20111112230957)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+>>>>>>> Stashed changes
   [1m[36mSQL (0.1ms)[0m  [1m SELECT name
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
@@ -1933,6 +1950,7 @@ Migrating to AddPreperationtimeToRecipes (20111112230957)
   [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("ingredients")[0m
   [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("recipes")
   [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("steps")[0m
+<<<<<<< Updated upstream
 DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /home/jonmarkgo/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
 
 
@@ -2280,3 +2298,9 @@ Started GET "/recipes/1" for 127.0.0.1 at 2011-11-12 19:51:55 -0500
   [1m[36mRecipe Load (0.5ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 1 LIMIT 1[0m
 Rendered recipes/show.html.erb within layouts/application (1.7ms)
 Completed 200 OK in 29ms (Views: 4.9ms | ActiveRecord: 0.5ms)
+=======
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+>>>>>>> Stashed changes
