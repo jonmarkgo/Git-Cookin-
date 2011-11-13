@@ -24,6 +24,7 @@ Gitcookin::Application.routes.draw do
     member do
       get 'fork'
       get 'diff'
+      post 'update'
     end
   end
   
