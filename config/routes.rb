@@ -16,6 +16,7 @@ Gitcookin::Application.routes.draw do
   resources :recipes do
     member do
       get 'fork'
+      get 'diff'
     end
   end
   

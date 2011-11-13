@@ -114,4 +114,47 @@ def fork
 end
 
 
+#recipes/1/diff
+def diff
+    childRecipe = Recipe.find(params[:id])
+    parentRecipe = childRecipe.parent
+    
+   #  parentHash = Hash[parentRecipe.steps.all.map {|x| [x.id, x]}]
+    parentHash = {}
+    parentRecipe.steps.each do |step|
+      step.stepingredients.each do |si|
+        parentHash[step.id.to_s+"_"+si.id.to_s] = si
+      end
+    end
+    
+    @diff = []
+    
+    childRecipe.steps.each do |step|
+      step.stepingredients.each do |si|
+        orgStep = parentHash[String(step.parent_id)+"_"+String(si.parent_id)] 
+        if orgStep == nil #Addition
+          @diff << "Added #{si.quanity} #{si.measurement} of #{si.ingredient.name}"
+        elsif orgStep.quanity != si.quanity
+          @diff << "Modified #{si.ingredient.name} to #{si.quanity} #{si.measurement}"
+          parentHash.delete(String(step.parent_id)+"_"+String(si.parent_id))
+        elsif orgStep.measurement != si.measurement
+          @diff << "Modified #{si.measurement} to #{si.measurement}"
+          parentHash.delete(String(step.parent_id)+"_"+String(si.parent_id))
+        else #Nothing changed
+          parentHash.delete(String(step.parent_id)+"_"+String(si.parent_id))          
+        end
+      end
+    end
+    
+    parentHash.each do |key, value| 
+       @diff << "Deleted #{value.ingredient.name}"
+    end
+    
+    puts "-----Diff---------"
+    puts @diff
+    puts "------------------"
+    
+    redirect_to(childRecipe, :notice => 'Competed Diff.')
+end
+
 end
