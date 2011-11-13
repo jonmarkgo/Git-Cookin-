@@ -25,6 +25,16 @@ if ($("#ingredients").is(":visible")) {
 			$("#subbut").show();
 		$("#steppy").show("drop",{},"fast");	
 		$("#ingredcont").text("Back");
+		var ingredhtml = '';
+		$('.inline-inputs').each(function(index, el) {
+			if ($(el).find('.quantity').val() != '') {
+			ingredhtml += '<li><span class="label ingredient">' + $(el).find('.quantity').val() + ' ' + $(el).find('.measurement').val() + ' ' + $(el).find('.ingredientname').val() + '</span></li>';
+}
+
+});
+		
+		$("#stepingredients").html(ingredhtml);
+		$( ".ingredient" ).draggable({ helper: "clone" });
 	});
 	}
 	else {
@@ -39,12 +49,12 @@ if ($("#ingredients").is(":visible")) {
 
 		$(".lastingred input:last").live(
 			'focus',function() {
-				$(".lastingred").after('<div class="clearfix lastingred">            <div class="input">              <div class="inline-inputs">                <input class="mini" type="text" placeholder="1">                <input class="small" type="text" placeholder="cup">                <input type="text" placeholder="whole what flour"> </div></div> </div>');
+				$(".lastingred").after('<div class="clearfix lastingred"> <div class="input"> <div class="inline-inputs">  <input class="mini quantity" type="number" placeholder="1" name="quantity[]"> <input class="small measurement" type="text" placeholder="cup" name="measurement[]"> <input type="text" placeholder="whole wheat flour" class="ingredientname" name="ingredientname[]"> </div></div> </div>');
           $(this).parent().parent().parent().removeClass("lastingred");
 		});
 		$(".laststep input").live(
 			'focus',function() {
-				$(".laststep").after('<tr class="laststep"><td><div class="clearfix stepinput"><div class="input"><input class="xlarge" type="text" placeholder="Combine milk and flour."></div></div></td><td><ul class="unstyled"></ul></td></tr>');
+				$(".laststep").after('<tr class="laststep"><td><div class="clearfix stepinput"><div class="input"><input class="xlarge" type="text" name="step[]" placeholder="Combine milk and flour."></div></div></td><td><ul class="unstyled"></ul></td></tr>');
 				$(this).parent().parent().parent().parent().removeClass("laststep");
 				$( ".stepinput" ).droppable({
 			hoverClass: "success",
@@ -54,7 +64,7 @@ if ($("#ingredients").is(":visible")) {
 		});
 		});
 
-		$( ".ingredient" ).draggable({ helper: "clone" });
+		
 
 		$( ".stepinput" ).droppable({
 			hoverClass: "success",
@@ -100,9 +110,9 @@ if ($("#ingredients").is(":visible")) {
           <div class="clearfix lastingred">
             <div class="input">
               <div class="inline-inputs">
-                <input class="mini" type="text" placeholder="1">
-                <input class="small" type="text" placeholder="cup"> 
-                <input type="text" placeholder="whole what flour">
+                <input class="mini quantity" type="number" placeholder="1" name="quantity[]">
+                <input class="small measurement" type="text" placeholder="cup" name="measurement[]">
+                <input type="text" class="ingredientname" placeholder="whole wheat flour" name="ingredientname[]">
               </div>
             </div>
           </div><!-- /clearfix -->
@@ -112,7 +122,7 @@ if ($("#ingredients").is(":visible")) {
              <div id="steppy" style="display: none;">
              <div class="row">
              <div class="span2"><h3>Ingredients</h3>
-             <ul class="unstyled"><li><span class="label ingredient">apples</span></li><li><span class="label ingredient">feces</span></li></ul></div>
+             <ul class="unstyled" id="stepingredients"></ul></div>
              <div class="span14">
           <legend style="padding-bottom: 20px;">What Are The Steps?</legend>
           <table>
@@ -121,7 +131,7 @@ if ($("#ingredients").is(":visible")) {
           <td>
               <div class="clearfix stepinput">
               <div class="input">
-                <input class="xlarge" type="text" placeholder="Combine milk and flour.">
+                <input class="xlarge" type="text" name="step[]" placeholder="Combine milk and flour.">
                 </div>
                </div>
             </td>
