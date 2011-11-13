@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111112221115) do
+ActiveRecord::Schema.define(:version => 20111112230957) do
 
   create_table "forks", :force => true do |t|
     t.integer  "parent_id"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20111112221115) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "description"
+    t.integer  "preperationtime"
   end
 
   create_table "steps", :force => true do |t|
