@@ -32,5 +32,5 @@ module RecipesHelper
        @diff = @diff + "Deleted #{value.ingredient.name} "
     end
     return @diff
-end
+  end
 end
