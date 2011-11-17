@@ -75,15 +75,17 @@ class RecipesController < ApplicationController
       names = p["step"+String(index)+"ingredientname"]
       quantities = p["step"+String(index)+"quantity"]
       
-      if quantities == nil then next end
+      if quantities != nil then
             
-      quantities.each_with_index do |mquantity,iindex|
-        measurment = measurments[iindex]
+        quantities.each_with_index do |mquantity,iindex|
+          measurment = measurments[iindex]
         
-        id = Ingredient.find_or_create_by_name(names[iindex]).id
-        ing = StepIngredient.new(:quanity => mquantity, :measurement => measurment, :ingredient_id => id)
-        mStep.step_ingredients << ing
-        ing.save
+          id = Ingredient.find_or_create_by_name(names[iindex]).id
+          ing = StepIngredient.new(:quanity => mquantity, :measurement => measurment, :ingredient_id => id)
+          mStep.step_ingredients << ing
+          ing.save
+        end
+
       end
       
       recipe.steps << mStep
