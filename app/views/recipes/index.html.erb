@@ -11,17 +11,19 @@
 	<th>Description</th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
 
 <% @recipes.each do |recipe| %>
   <tr>
-    <td><%= link_to recipe.name, recipe %></td>
+    <td><%= recipe.name %></td>
     <td><%= recipe.user_id %></td>
     <td><%= recipe.parent_id %></td>
     <td><%= recipe.votes_up %></td>
     <td><%= recipe.votes_down %></td>
     <td><%= recipe.servings %></td>
 	<td><%= recipe.description %></td>
+    <td><%= link_to 'Show', recipe %></td>
     <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
     <td><%= link_to 'Fork', fork_recipe_path(recipe) %></td>
     <td><%= button_to 'Destroy', recipe, :confirm => 'Are you sure?', :method => :delete %></td>
