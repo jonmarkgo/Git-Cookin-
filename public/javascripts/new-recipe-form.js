@@ -65,7 +65,20 @@ $(function() {
 
 				var stepindex = $(this).parent().parent().index() - 1;
 				$(ui.draggable).fadeOut().remove();
-				$(this).parent().parent().find('td:last > ul').append('<li><span class="label success">' + $(ui.draggable).text() + '</span>' + $(ui.draggable).find('.indetails').html() + '</li>').fadeIn();
+				$(this).parent().parent().find('td:last > ul').append('<li><span class="label success">' + $(ui.draggable).text() + '</span><button class="ingredient-delete-button">x</button><div style="display:none;" class="indetails">' + $(ui.draggable).find('.indetails').html() + '</div></li>').fadeIn();
+
+				// Turn remove ingredient button into button (doesn't seem to work... not sure)
+				$(".ingredient-delete-button").button({icons: {primary:'ui-icon-close'}});
+
+				// When remove ingredient button is pressed, move it back to available ingredient list
+				$(".ingredient-delete-button").click(function(event){
+					event.preventDefault();
+					$("#stepingredients").append('<li class="ingredient"><span class="label">' + $(this).parent().children("span").html() + '</span><div style="display:none;" class="indetails">' + $(this).parent().children('.indetails').html() + '</div></li>');
+
+					$( ".ingredient" ).draggable({revert: "invalid"});
+
+					$(this).parent().remove();
+				});
 
 				$(this).parent().parent().find('li:last > .hidquant').attr('name','step' + stepindex + 'quantity[]');
 				$(this).parent().parent().find('li:last > .hidmeas').attr('name','step' + stepindex + 'measurement[]');
