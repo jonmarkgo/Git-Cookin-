@@ -46,12 +46,12 @@ $(function() {
 		}
 	});	
 
-	$(".lastingred input:last").live('focus',function() {
+	$(".lastingred input:last").on('focus',function() {
 		$(".lastingred").after('<div class="clearfix lastingred"> <div class="input"> <div class="inline-inputs">  <input class="mini quantity" type="number" placeholder="1" name="quantity[]"> <input class="small measurement" type="text" placeholder="cup" name="measurement[]"> <input type="text" placeholder="whole wheat flour" class="ingredientname" name="ingredientname[]"> </div></div> </div>');
 		$(this).parent().parent().parent().removeClass("lastingred");
 	});
 
-	$(".laststep input").live('focus',function() {
+	$(".laststep input").on('focus',function() {
 		$(".laststep").after('<tr class="laststep"><td><div class="clearfix stepinput"><div class="input"><input class="xlarge" type="text" name="step[]" placeholder="Combine milk and flour."></div></div></td><td><ul class="unstyled"></ul></td></tr>');
 		$(this).parent().parent().parent().parent().removeClass("laststep");
 		$( ".stepinput" ).droppable({
