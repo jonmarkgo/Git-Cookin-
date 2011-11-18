@@ -57,6 +57,12 @@ $(function() {
 		$( ".stepinput" ).droppable({
 			hoverClass: "success",
 			drop: function( event, ui ) {
+
+				// Remove drag-and-drop instructions if they are still there
+				if($("#no-ingredients-yet").length){
+					$("#no-ingredients-yet").remove();
+	   			}
+
 				var stepindex = $(this).parent().parent().index() - 1;
 				$(ui.draggable).fadeOut().remove();
 				$(this).parent().parent().find('td:last > ul').append('<li><span class="label success">' + $(ui.draggable).text() + '</span>' + $(ui.draggable).find('.indetails').html() + '</li>').fadeIn();
