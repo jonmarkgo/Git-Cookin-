@@ -65,10 +65,7 @@ $(function() {
 
 				var stepindex = $(this).parent().parent().index() - 1;
 				$(ui.draggable).fadeOut().remove();
-				$(this).parent().parent().find('td:last > ul').append('<li><span class="label success">' + $(ui.draggable).text() + '</span><button class="ingredient-delete-button">x</button><div style="display:none;" class="indetails">' + $(ui.draggable).find('.indetails').html() + '</div></li>').fadeIn();
-
-				// Turn remove ingredient button into button (doesn't seem to work... not sure)
-				$(".ingredient-delete-button").button({icons: {primary:'ui-icon-close'}});
+				$(this).parent().parent().find('td:last > ul').append('<li><span class="label success">' + $(ui.draggable).text() + '</span>&nbsp;<button class="ingredient-delete-button label success">x</button><div style="display:none;" class="indetails">' + $(ui.draggable).find('.indetails').html() + '</div></li>').fadeIn();
 
 				// When remove ingredient button is pressed, move it back to available ingredient list
 				$(".ingredient-delete-button").click(function(event){
